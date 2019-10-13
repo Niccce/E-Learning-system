@@ -35,7 +35,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 5. 在`http://localhost:8080`查看项目
 
 ### 使用vux
-> 移动端UI组件库:(vux)[https://doc.vux.li/zh-CN/]
+> 移动端UI组件库:[vux](https://doc.vux.li/zh-CN/)
 > 参考：[小白用vux](https://www.jianshu.com/p/930d9bb22736)
 
 1. 在项目里安装vux：`npm install vux --save`
@@ -91,5 +91,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 5. 做一些无用代码的删除
 
 # 开发
-[-] 底部导航
-[ ] 首页
+- [-] 底部导航
+- [ ] 首页
+- [ ] 消息
+- [ ] 我的学习
+- [ ] 账号
