@@ -96,3 +96,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - [ ] 消息
 - [ ] 我的学习
 - [ ] 账号
+
+# 注意：
+axios本身并不支持发送跨域的请求，没有提供相应的API， 所以只能使用第三方库vue-resource.
+`npm install --save vue-resource`
+
+
+
+`npm install axios --save`

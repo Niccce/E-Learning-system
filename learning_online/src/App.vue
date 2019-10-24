@@ -3,23 +3,18 @@
     <router-view />
     <tabbar @on-index-change="onIndexChange" v-if="$route.meta.isNavShow">
       <tabbar-item selected link="/">
-        <img slot="icon" src="~@/assets/Home.svg" />
-        <img slot="icon-active" src="~@/assets/Home-selected.svg" />
+        <img slot="icon" src="~@/assets/Home.png" />
+        <img slot="icon-active" src="~@/assets/Home-selected.png" />
         <span slot="label">首页</span>
       </tabbar-item>
       <tabbar-item link="/message">
-        <img slot="icon" src="~@/assets/msg.svg" />
-        <img slot="icon-active" src="~@/assets/msg-selected.svg" />
+        <img slot="icon" src="~@/assets/msg.png" />
+        <img slot="icon-active" src="~@/assets/msg-selected.png" />
         <span slot="label">消息</span>
       </tabbar-item>
-      <tabbar-item link="/learning">
-        <img slot="icon" src="~@/assets/course.svg" />
-        <img slot="icon-active" src="~@/assets/course-selected.svg" />
-        <span slot="label">我的学习</span>
-      </tabbar-item>
       <tabbar-item link="/account">
-        <img slot="icon" src="~@/assets/user.svg" />
-        <img slot="icon-active" src="~@/assets/user-selected.svg" />
+        <img slot="icon" src="~@/assets/user.png" />
+        <img slot="icon-active" src="~@/assets/user-selected.png" />
         <span slot="label">账号</span>
       </tabbar-item>
     </tabbar>
