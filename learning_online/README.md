@@ -93,14 +93,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 开发
 - [x] 底部导航
 - [ ] 首页
+    - [x] 新闻轮播图
+    - [ ] 新闻消息条
+    - [ ] 会员分类栏
+    - [ ] 推荐课程
 - [ ] 消息
 - [ ] 我的学习
 - [ ] 账号
 
 # 注意：
-axios本身并不支持发送跨域的请求，没有提供相应的API， 所以只能使用第三方库vue-resource.
+axios本身并不支持发送跨域的请求，没有提供相应的API，所以只能使用第三方库vue-resource.
 `npm install --save vue-resource`
-
-
-
 `npm install axios --save`
