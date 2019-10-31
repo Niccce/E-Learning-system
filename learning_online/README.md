@@ -91,7 +91,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 5. 做一些无用代码的删除
 
 # 开发
-- [-] 底部导航
+- [x] 底部导航
 - [ ] 首页
 - [ ] 消息
 - [ ] 我的学习

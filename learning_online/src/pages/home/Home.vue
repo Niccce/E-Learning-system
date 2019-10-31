@@ -14,12 +14,12 @@ export default {
         .then(response => {
           console.log(response.data)
         })
-    // this.$http.post('/api/class/getClass').then(response => {
-    //   console.log(response)
+      // this.$http.post('/api/class/getClass').then(response => {
+      //   console.log(response)
+      // })
     }
   }
 }
-
 </script>
 
 <style scoped></style>

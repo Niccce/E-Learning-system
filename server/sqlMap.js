@@ -2,7 +2,7 @@
 var sqlMap = {
     // 课程
     class: {
-        search: 'select * from Class'
+        search: 'select * from class'
     }
 }
  

@@ -15,6 +15,8 @@ sqlMap.js----SQL语句映射文件，以供api逻辑调用
 api/userApi.js ---- 测试用api示例
 ```
 
+[Vuejs 本地proxytable无效排查方案](https://blog.csdn.net/qq_35643562/article/details/84788861)
+
 mysql相关操作
 ```text
 bin目录下
@@ -22,6 +24,9 @@ bin目录下
 
 登入：
 mysql -u root -p
+
+use RUNOOB;
+select * from Class;
 退出:exit
 ```
 
