@@ -95,7 +95,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - [ ] 首页
     - [x] 搜索框
     - [x] 新闻轮播图
-    - [ ] 新闻消息条
+    - [x] 新闻消息条
     - [ ] 会员分类栏
     - [ ] 推荐课程
 - [ ] 消息
