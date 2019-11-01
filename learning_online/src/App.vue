@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view />
+    <!-- <router-view /> -->
+    <router-view :style="routerViewClass"></router-view>
     <tabbar @on-index-change="onIndexChange" v-if="$route.meta.isNavShow">
       <tabbar-item selected link="/">
         <img slot="icon" src="~@/assets/Home.png" />
@@ -39,10 +40,29 @@ export default {
   //     navShow
   //   }
   // },
+  data () {
+    return {
+      index: 0,
+      routerViewClass: {
+        height: '',
+        overflow: 'scroll'
+      }
+    }
+  },
   methods: {
     onIndexChange (newIndex, oldIndex) {
       console.log(newIndex, oldIndex)
+    },
+    setHeight () {
+      this.routerViewClass.height = window.innerHeight - 53 + 'px'
+      console.log(this.routerViewClass)
     }
+  },
+  mounted () {
+    // 在DOM加载后，执行，获得window的高度，并减去header和tabbar的高度，
+    // 96是自己在开发者模式看到的，header的height为 40，上下padding为 3，
+    // tabbar的height为 50
+    this.setHeight()
   }
   // computed: mapGetters([
   //   // 从 getters 中获取值

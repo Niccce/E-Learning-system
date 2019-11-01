@@ -90,9 +90,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 4. 在[iconfont](https://www.iconfont.cn/)上创建自己的项目
 5. 做一些无用代码的删除
 
-# 开发
+# 界面开发
 - [x] 底部导航
 - [ ] 首页
+    - [x] 搜索框
     - [x] 新闻轮播图
     - [ ] 新闻消息条
     - [ ] 会员分类栏
@@ -105,3 +106,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 axios本身并不支持发送跨域的请求，没有提供相应的API，所以只能使用第三方库vue-resource.
 `npm install --save vue-resource`
 `npm install axios --save`
+
+[解决内容过多时，底部导航栏不固定的问题](https://blog.csdn.net/qq_41009742/article/details/85330503)

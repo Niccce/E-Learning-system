@@ -1,18 +1,20 @@
 <template>
   <div>
-    home
-    <button @click="getClass">点击</button>
+    <search></search>
     <news-swiper></news-swiper>
+    <button @click="getClass">点击</button>
   </div>
 </template>
 
 <script>
 import newsSwiper from './components/newsSwiper'
+import search from './components/search'
 
 export default {
   name: 'home',
   components: {
-    newsSwiper
+    newsSwiper,
+    search
   },
   methods: {
     getClass () {
