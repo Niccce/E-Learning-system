@@ -44,8 +44,8 @@ export default {
     display: block;
 }
 .align-middle {
-    position: relative;
-    right: 7.2em;
+    /* position: relative;
+    right: 7.2em; */
   text-align: center;
 }
 .imgstyle{
