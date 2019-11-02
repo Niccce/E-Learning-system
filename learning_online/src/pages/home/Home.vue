@@ -3,6 +3,7 @@
     <search></search>
     <news-swiper></news-swiper>
     <news></news>
+    <member-level></member-level>
     <button @click="getClass">点击</button>
   </div>
 </template>
@@ -11,13 +12,15 @@
 import search from './components/search'
 import newsSwiper from './components/newsSwiper'
 import news from './components/news'
+import memberLevel from './components/memberLevel'
 
 export default {
   name: 'home',
   components: {
     search,
     newsSwiper,
-    news
+    news,
+    memberLevel
   },
   methods: {
     getClass () {

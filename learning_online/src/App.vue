@@ -90,4 +90,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+#app{
+  background-color: #e6ebf2;
+}
+</style>
