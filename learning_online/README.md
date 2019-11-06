@@ -97,8 +97,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     - [x] 新闻轮播图
     - [x] 新闻消息条
     - [x] 会员分类栏
-    - [ ] 推荐课程
+    - [x] 推荐课程
 - [ ] 消息
+    - [ ] 课程消息
+    - [ ] 课程回复内页
 - [ ] 我的学习
 - [ ] 账号
 

@@ -4,6 +4,7 @@
     <news-swiper></news-swiper>
     <news></news>
     <member-level></member-level>
+    <recommended-courses></recommended-courses>
     <button @click="getClass">点击</button>
   </div>
 </template>
@@ -13,6 +14,7 @@ import search from './components/search'
 import newsSwiper from './components/newsSwiper'
 import news from './components/news'
 import memberLevel from './components/memberLevel'
+import recommendedCourses from './components/recommendedCourses'
 
 export default {
   name: 'home',
@@ -20,7 +22,8 @@ export default {
     search,
     newsSwiper,
     news,
-    memberLevel
+    memberLevel,
+    recommendedCourses
   },
   methods: {
     getClass () {

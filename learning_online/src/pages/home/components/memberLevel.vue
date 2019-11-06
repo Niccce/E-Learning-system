@@ -19,7 +19,7 @@
   </flexbox> -->
   <div class="container">
     <grid :show-lr-borders="false" :show-vertical-dividers="false">
-      <grid-item link="/component/cell">
+      <grid-item link="/message">
         <img slot="icon" src="../../../assets/member.png" />
         <span slot="label">普通会员</span>
       </grid-item>
@@ -50,13 +50,18 @@ export default {
   components: {
     Grid,
     GridItem
+  },
+  methods: {
+    onItemClick () {
+      console.log('on item click')
+    }
   }
 }
 </script>
 
 <style scoped>
-.container{
-  margin-top: .6em;
+.container {
+  margin-top: 0.6em;
   background-color: #ffffff;
 }
 /* .container {
