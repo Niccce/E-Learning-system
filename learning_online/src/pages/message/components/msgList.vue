@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/">
+  <router-link to="/message/msgDetails">
     <div class="container">
       <div class="left">
         <img class="courseImg" src="../../../assets/class-fill.png" />

@@ -1,24 +1,24 @@
 <template>
   <div class="container">
-    <x-header :left-options="{ showBack: false }">消息</x-header>
-    <msg-list></msg-list>
+    <x-header>Python课程</x-header>
+    <msg-Detail></msg-Detail>
   </div>
 </template>
 
 <script>
 import { XHeader } from 'vux'
-import msgList from './components/msgList'
+import msgDetail from './components/msgDetail'
 
 export default {
   components: {
     XHeader,
-    msgList
+    msgDetail
   }
 }
 </script>
 
 <style scoped>
 .container {
-  background-color: white;
+  background-color: #e6ebf2;
 }
 </style>
