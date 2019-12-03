@@ -90,8 +90,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app{
   background-color: #e6ebf2;
+}
+#app /deep/ .weui-tabbar{
+  background-color: #2f2f33
+}
+#app /deep/ .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label{
+  color:#1391d4
 }
 </style>

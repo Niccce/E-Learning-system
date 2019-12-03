@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <search
       @result-click="resultClick"
       @on-change="getResult"
@@ -67,4 +67,11 @@ function getResult (val) {
 }
 </script>
 
-<style></style>
+<style scoped>
+.container /deep/ .weui-search-bar{
+  background-color: #2f2f33;
+}
+.container /deep/ .weui-search-bar__cancel-btn{
+  color:#1391d4;
+}
+</style>

@@ -21,4 +21,7 @@ export default {
 .container {
   background-color: white;
 }
+.container /deep/ .vux-header {
+  background-color: #2f2f33
+}
 </style>

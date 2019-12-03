@@ -29,7 +29,8 @@ export default {
   padding: 0.8em 0.8em;
   color: black;
   margin-bottom: 0.7em;
-  height: 100%;
+  height: 5em;
+  box-shadow: .3em .3em .3em 0 rgba(0, 0, 0, 0.267);
 }
 .top {
   font-size: 1.2em;

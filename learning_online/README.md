@@ -31,7 +31,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 1. 创建一个基于webpack打包工具构建的Vue项目
 2. `vue init webpack learning_online`，选择各项配置
 3. `cd learning_online`
-4. `npm run dev`，帮我们打包
+4. `npm run dev`，`npm start`帮我们打包，启动项目
 5. 在`http://localhost:8080`查看项目
 
 ### 使用vux
@@ -103,6 +103,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     - [ ] 课程回复内页
 - [ ] 我的学习
 - [ ] 账号
+- [ ] 新闻详情页
+- [ ] 课程展示页
+- [ ] 课程学习页
+    - [ ] 留言
 
 # 注意：
 axios本身并不支持发送跨域的请求，没有提供相应的API，所以只能使用第三方库vue-resource.

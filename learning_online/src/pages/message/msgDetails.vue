@@ -19,6 +19,9 @@ export default {
 
 <style scoped>
 .container {
-  background-color: #e6ebf2;
+  background-color: white;
+}
+.container /deep/ .vux-header {
+  background-color: #2f2f33
 }
 </style>
