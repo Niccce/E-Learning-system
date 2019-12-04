@@ -2,9 +2,9 @@
   <div class="container">
     <img class="courseImg" src="" />
     <div class="classText">
-      <span class="courseTitle">
+      <div class="courseTitle">
         前端课程前端课程前端课程前端课程前端课程前端课程前端课程
-      </span>
+      </div>
       <div class="courseInfo">
         课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍
       </div>
@@ -20,17 +20,9 @@ export default {}
 .container {
   display: flex;
   position: relative;
-  margin-top: 0;
+  margin-bottom: 0.6em;
   padding: 0.5em 0.8em;
-}
-.container::after {
-  content: '';
-  position: absolute;
-  display: block;
-  height: 1px;
-  width: 90%;
-  bottom: 0;
-  background-color: #d3d3d3;
+  background-color: white;
 }
 .courseImg {
   display: block;

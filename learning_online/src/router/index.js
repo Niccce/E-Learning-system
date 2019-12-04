@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home.vue'
 import Message from '@/pages/message/Message'
 import msgDetails from '@/pages/message/msgDetails'
 import Account from '@/pages/account/Account'
+import finished from '@/pages/account/finished'
 
 Vue.use(Router)
 
@@ -39,6 +40,14 @@ export default new Router({
       component: Account,
       meta: {
         isNavShow: true
+      }
+    },
+    {
+      path: '/account/finished',
+      name: 'finished',
+      component: finished,
+      meta: {
+        isNavShow: false
       }
     }
   ]

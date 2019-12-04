@@ -103,6 +103,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     - [ ] 课程回复内页
 - [ ] 我的学习
 - [ ] 账号
+    - [ ] 已购课程
+    - [ ] 完成课程
+    - [ ] 我的成绩
+    - [ ] 我的证书
 - [ ] 新闻详情页
 - [ ] 课程展示页
 - [ ] 课程学习页
