@@ -1,5 +1,10 @@
 <template>
   <div class="container">
+    <!-- <div class="con"> -->
+    <div class="subscript">
+      已完成
+    </div>
+    <!-- </div> -->
     <img class="courseImg" src="" />
     <div class="classText">
       <div class="courseTitle">
@@ -23,14 +28,20 @@ export default {}
   margin-bottom: 0.6em;
   padding: 0.5em 0.8em;
   background-color: white;
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  /* position: relative; */
 }
 .courseImg {
   display: block;
-  height: 5em;
+  height: 4.5em;
   width: 7em;
   background-color: aquamarine;
-  border-radius: 0.68em;
+  border-radius: 0.4em;
   overflow: hidden;
+  margin: 0.2em 0;
 }
 .classText {
   margin-left: 0.7em;
@@ -56,5 +67,23 @@ export default {}
   overflow: hidden;
   white-space: nowrap;
   margin-top: 1.4em;
+}
+.subscript {
+  color: #fff;
+  height: 1.8em;
+  width: 8em;
+  position: absolute;
+  /* right: 1em; */
+  right: -2em;
+  top: 1em;
+  text-align: center;
+  line-height: 1.8em;
+  font-family: "黑体";
+  background-color: #0c60ee;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 </style>
