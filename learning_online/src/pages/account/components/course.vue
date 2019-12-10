@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <!-- <div class="con"> -->
-    <div class="subscript">
+    <!-- <div class="subscript">
       已完成
-    </div>
-    <!-- </div> -->
+    </div> -->
+    <!-- <finished-icon></finished-icon> -->
+    <achi-icon></achi-icon>
     <img class="courseImg" src="" />
     <div class="classText">
       <div class="courseTitle">
@@ -18,7 +18,14 @@
 </template>
 
 <script>
-export default {}
+import finishedIcon from './finishedIcon'
+import achiIcon from './achiIcon'
+export default {
+  components: {
+    finishedIcon,
+    achiIcon
+  }
+}
 </script>
 
 <style scoped>

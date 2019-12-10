@@ -105,7 +105,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - [ ] 账号
     - [ ] 已购课程
     - [x] 完成课程
-    - [ ] 我的成绩
+    - [x] 我的成绩
     - [ ] 我的证书
 - [ ] 新闻详情页
 - [ ] 课程展示页

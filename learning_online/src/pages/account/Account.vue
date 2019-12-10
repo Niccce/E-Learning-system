@@ -11,7 +11,7 @@
           <img slot="icon" src="../../assets/seniorMember.png" />
           <span slot="label">完成课程</span>
         </grid-item>
-        <grid-item link="/component/cell" @on-item-click="onItemClick">
+        <grid-item link="/account/achievement" @on-item-click="onItemClick">
           <img slot="icon" src="../../assets/superMember.png" />
           <span slot="label">我的成绩</span>
         </grid-item>
