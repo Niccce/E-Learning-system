@@ -6,6 +6,7 @@ import msgDetails from '@/pages/message/msgDetails'
 import Account from '@/pages/account/Account'
 import finished from '@/pages/account/finished'
 import achievement from '@/pages/account/achievement'
+import courses from '@/pages/courses/courses'
 
 Vue.use(Router)
 
@@ -55,6 +56,14 @@ export default new Router({
       path: '/account/achievement',
       name: 'achievement',
       component: achievement,
+      meta: {
+        isNavShow: false
+      }
+    },
+    {
+      path: '/courses',
+      name: 'courses',
+      component: courses,
       meta: {
         isNavShow: false
       }

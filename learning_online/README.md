@@ -108,7 +108,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     - [x] 我的成绩
     - [ ] 我的证书
 - [ ] 新闻详情页
-- [ ] 课程展示页
+- [ ] 课程详情页
 - [ ] 课程学习页
     - [ ] 留言
 

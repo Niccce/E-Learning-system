@@ -19,15 +19,15 @@
   </flexbox> -->
   <div class="container">
     <grid :show-lr-borders="false" :show-vertical-dividers="false">
-      <grid-item link="/message">
+      <grid-item link="/courses">
         <img slot="icon" src="../../../assets/member.png" />
         <span slot="label">普通会员</span>
       </grid-item>
-      <grid-item link="/component/cell">
+      <grid-item link="/courses">
         <img slot="icon" src="../../../assets/seniorMember.png" />
         <span slot="label">高级会员</span>
       </grid-item>
-      <grid-item link="/component/cell" @on-item-click="onItemClick">
+      <grid-item link="/courses" @on-item-click="goToCDetails">
         <img slot="icon" src="../../../assets/superMember.png" />
         <span slot="label">特级会员</span>
       </grid-item>
@@ -36,14 +36,6 @@
 </template>
 
 <script>
-// import { Flexbox, FlexboxItem } from 'vux'
-
-// export default {
-//   components: {
-//     Flexbox,
-//     FlexboxItem
-//   }
-// }
 import { Grid, GridItem } from 'vux'
 
 export default {
@@ -52,8 +44,15 @@ export default {
     GridItem
   },
   methods: {
-    onItemClick () {
-      console.log('on item click')
+    goToCDetails () {
+      this.$router.push({
+        path: '/courses',
+        query: {
+          memberLevel: '123'
+        }
+      })
+      console.log('发送')
+      console.log(this.$router)
     }
   }
 }
