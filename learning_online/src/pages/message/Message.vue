@@ -1,8 +1,10 @@
 <template>
+<keep-alive>
   <div class="container">
     <x-header :left-options="{ showBack: false }">消息</x-header>
     <msg-list></msg-list>
   </div>
+  </keep-alive>
 </template>
 
 <script>
@@ -14,6 +16,10 @@ export default {
     XHeader,
     msgList
   }
+  // activated () {
+  //   this.$store.state.showNav = true
+  //   console.log('reset')
+  // }
 }
 </script>
 

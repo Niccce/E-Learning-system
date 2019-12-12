@@ -90,6 +90,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 4. 在[iconfont](https://www.iconfont.cn/)上创建自己的项目
 5. 做一些无用代码的删除
 
+# 使用vuex进行状态管理
+* `npm install vuex --save`
+* 在src文件夹下新建store文件夹，在其中新建index.js
+* 在main.js中使用store
+
+* [vuex官方文档](https://vuex.vuejs.org/zh/guide/)
+
 # 界面开发
 - [x] 底部导航
 - [ ] 首页
@@ -112,6 +119,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 - [ ] 课程学习页
     - [ ] 留言
 
+
+
 # 注意：
 axios本身并不支持发送跨域的请求，没有提供相应的API，所以只能使用第三方库vue-resource.
 `npm install --save vue-resource`
@@ -121,3 +130,4 @@ axios本身并不支持发送跨域的请求，没有提供相应的API，所以
 
 参考：
 * [角标css实现](https://www.cnblogs.com/liulinjie/p/8484525.html)
+* [如何用vuex来管理顶部导航栏显示隐藏（状态管理）](https://blog.csdn.net/qq_33026699/article/details/80746008)

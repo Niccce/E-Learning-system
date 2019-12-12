@@ -17,7 +17,7 @@ export default new Router({
       name: 'Home',
       component: Home,
       meta: {
-        isNavShow: true
+        showNav: true
       }
     },
     {
@@ -25,48 +25,37 @@ export default new Router({
       name: 'Message',
       component: Message,
       meta: {
-        isNavShow: true
+        showNav: true
       }
     },
     {
       path: '/message/msgDetails',
       name: 'msgDetails',
-      component: msgDetails,
-      meta: {
-        isNavShow: false
-      }
+      component: msgDetails
     },
     {
       path: '/account',
       name: 'Account',
       component: Account,
       meta: {
-        isNavShow: true
+        showNav: true
+        // navIndex: 0
       }
     },
     {
       path: '/account/finished',
       name: 'finished',
-      component: finished,
-      meta: {
-        isNavShow: false
-      }
+      component: finished
     },
     {
       path: '/account/achievement',
       name: 'achievement',
-      component: achievement,
-      meta: {
-        isNavShow: false
-      }
+      component: achievement
     },
     {
       path: '/courses',
       name: 'courses',
-      component: courses,
-      meta: {
-        isNavShow: false
-      }
+      component: courses
     }
   ]
 })

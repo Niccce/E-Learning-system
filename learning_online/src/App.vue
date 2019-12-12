@@ -2,8 +2,9 @@
   <div id="app">
     <!-- <router-view /> -->
     <router-view :style="routerViewClass"></router-view>
-    <tabbar @on-index-change="onIndexChange" v-if="$route.meta.isNavShow">
-      <tabbar-item selected link="/">
+    <tabbar @on-index-change="onIndexChange" v-if="$route.meta.showNav" v-model="index">
+      <!-- <tabbar-item selected link="/"> -->
+      <tabbar-item link="/">
         <img slot="icon" src="~@/assets/Home.png" />
         <img slot="icon-active" src="~@/assets/Home-selected.png" />
         <span slot="label">首页</span>
@@ -27,19 +28,12 @@ import { Tabbar, TabbarItem } from 'vux'
 // import { mapGetters, mapActions } from 'vuex'
 // import { mapGetters } from 'vuex'
 
-// let navShow = true
-
 export default {
   name: 'App',
   components: {
     Tabbar,
     TabbarItem
   },
-  // data () {
-  //   return {
-  //     navShow
-  //   }
-  // },
   data () {
     return {
       index: 0,
@@ -52,6 +46,8 @@ export default {
   methods: {
     onIndexChange (newIndex, oldIndex) {
       console.log(newIndex, oldIndex)
+      // this.$store.state.navIndex = newIndex
+      this.index = newIndex
     },
     setHeight () {
       this.routerViewClass.height = window.innerHeight - 53 + 'px'
@@ -63,6 +59,7 @@ export default {
     // 96是自己在开发者模式看到的，header的height为 40，上下padding为 3，
     // tabbar的height为 50
     this.setHeight()
+    // this.index = 1
   }
   // computed: mapGetters([
   //   // 从 getters 中获取值

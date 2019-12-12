@@ -7,6 +7,7 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import VueResource from 'vue-resource'
 import axios from 'axios'
+import store from './store'
 
 Vue.use(VueResource)
 Vue.prototype.$axios = axios
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -14,6 +14,10 @@ export default {
     XHeader,
     msgDetail
   }
+  // created () {
+  //   this.$store.state.showNav = false
+  //   console.log('set')
+  // }
 }
 </script>
 
