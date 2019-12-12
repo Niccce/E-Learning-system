@@ -7,6 +7,7 @@ import Account from '@/pages/account/Account'
 import finished from '@/pages/account/finished'
 import achievement from '@/pages/account/achievement'
 import courses from '@/pages/courses/courses'
+import certificates from '@/pages/account/certificates'
 
 Vue.use(Router)
 
@@ -45,12 +46,26 @@ export default new Router({
     {
       path: '/account/finished',
       name: 'finished',
-      component: finished
+      component: finished,
+      meta: {
+        showNav: true
+      }
     },
     {
       path: '/account/achievement',
       name: 'achievement',
-      component: achievement
+      component: achievement,
+      meta: {
+        showNav: true
+      }
+    },
+    {
+      path: '/account/certificates',
+      name: 'certificates',
+      component: certificates,
+      meta: {
+        showNav: true
+      }
     },
     {
       path: '/courses',
