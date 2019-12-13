@@ -7,6 +7,7 @@ import Account from '@/pages/account/Account'
 import myCourse from '@/pages/account/myCourse'
 import achievement from '@/pages/account/achievement'
 import courses from '@/pages/courses/courses'
+import courseDetails from '@/pages/courses/courseDetails'
 import certificates from '@/pages/account/certificates'
 
 Vue.use(Router)
@@ -46,31 +47,27 @@ export default new Router({
     {
       path: '/account/myCourse',
       name: 'myCourse',
-      component: myCourse,
-      meta: {
-        showNav: true
-      }
+      component: myCourse
     },
     {
       path: '/account/achievement',
       name: 'achievement',
-      component: achievement,
-      meta: {
-        showNav: true
-      }
+      component: achievement
     },
     {
       path: '/account/certificates',
       name: 'certificates',
-      component: certificates,
-      meta: {
-        showNav: true
-      }
+      component: certificates
     },
     {
       path: '/courses',
       name: 'courses',
-      component: courses
+      component: courses // 会员分类课程
+    },
+    {
+      path: '/courses/courseDetails',
+      name: 'courseDetails',
+      component: courseDetails
     }
   ]
 })

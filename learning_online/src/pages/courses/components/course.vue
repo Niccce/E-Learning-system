@@ -1,15 +1,17 @@
 <template>
-  <div class="container">
-    <img class="courseImg" src="" />
-    <div class="classText">
-      <span class="courseTitle">
-        前端课程前端课程前端课程前端课程前端课程前端课程前端课程
-      </span>
-      <div class="courseInfo">
-        课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍
+  <router-link to="/courses/courseDetails">
+    <div class="container">
+      <img class="courseImg" src="" />
+      <div class="classText">
+        <span class="courseTitle">
+          前端课程前端课程前端课程前端课程前端课程前端课程前端课程
+        </span>
+        <div class="courseInfo">
+          课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍
+        </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -22,6 +24,7 @@ export default {}
   position: relative;
   margin-top: 0;
   padding: 0.5em 0.8em;
+  color: black;
 }
 .container::after {
   content: '';

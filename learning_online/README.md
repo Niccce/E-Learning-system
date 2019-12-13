@@ -98,6 +98,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * [vuex官方文档](https://vuex.vuejs.org/zh/guide/)
 
 # 界面开发
+- [ ] 登录
+- [ ] 注册
 - [x] 底部导航
 - [ ] 首页
     - [x] 搜索框
@@ -114,7 +116,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     - [x] 我的成绩
     - [x] 我的证书
 - [ ] 新闻详情页
-- [ ] 课程详情页
+- [x] 课程详情页
 - [ ] 课程学习页
     - [ ] 留言
 

@@ -62,7 +62,7 @@ export default {
   },
   created () {
     // 导航栏状态问题
-    console.log(this.$route.path.replace('/', ''))
+    // console.log(this.$route.path.replace('/', ''))
     if (this.$route.path.replace('/', '') === 'message') {
       console.log('hi')
       this.index = 1

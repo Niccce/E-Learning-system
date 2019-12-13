@@ -1,20 +1,22 @@
 <template>
-  <div class="container">
-    <!-- <div class="subscript">
-      已完成
-    </div> -->
-    <!-- <finished-icon></finished-icon> -->
-    <achi-icon></achi-icon>
-    <img class="courseImg" src="" />
-    <div class="classText">
-      <div class="courseTitle">
-        前端课程前端课程前端课程前端课程前端课程前端课程前端课程
-      </div>
-      <div class="courseInfo">
-        课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍
+  <router-link to="/courses/courseDetails">
+    <div class="container">
+      <!-- <div class="subscript">
+        已完成
+      </div> -->
+      <!-- <finished-icon></finished-icon> -->
+      <achi-icon></achi-icon>
+      <img class="courseImg" src="" />
+      <div class="classText">
+        <div class="courseTitle">
+          前端课程前端课程前端课程前端课程前端课程前端课程前端课程
+        </div>
+        <div class="courseInfo">
+          课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍
+        </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -40,6 +42,7 @@ export default {
 
   overflow: hidden;
   /* position: relative; */
+  color: black;
 }
 .courseImg {
   display: block;
