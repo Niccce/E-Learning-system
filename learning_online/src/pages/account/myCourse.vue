@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <x-header>已完成课程</x-header>
+    <x-header>我的课程</x-header>
     <div class="finished-head">
       <div class="nums">
         <div class="num">
