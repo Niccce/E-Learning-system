@@ -59,7 +59,16 @@ export default {
     // 96是自己在开发者模式看到的，header的height为 40，上下padding为 3，
     // tabbar的height为 50
     this.setHeight()
-    // this.index = 1
+  },
+  created () {
+    // 导航栏状态问题
+    console.log(this.$route.path.replace('/', ''))
+    if (this.$route.path.replace('/', '') === 'message') {
+      console.log('hi')
+      this.index = 1
+    } else if (this.$route.path.replace('/', '') === 'account') {
+      this.index = 2
+    }
   }
   // computed: mapGetters([
   //   // 从 getters 中获取值
