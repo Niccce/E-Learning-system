@@ -3,13 +3,13 @@
     <x-header :left-options="{ showBack: false }">我的学习</x-header>
     <div class="container">
       <grid :show-lr-borders="false" :show-vertical-dividers="false">
-        <grid-item link="/message">
+        <!-- <grid-item link="/message">
           <img slot="icon" src="../../assets/member.png" />
           <span slot="label">已购课程</span>
-        </grid-item>
-        <grid-item link="/account/finished">
+        </grid-item> -->
+        <grid-item link="/account/myCourse">
           <img slot="icon" src="../../assets/seniorMember.png" />
-          <span slot="label">完成课程</span>
+          <span slot="label">我的课程</span>
         </grid-item>
         <grid-item link="/account/achievement" @on-item-click="onItemClick">
           <img slot="icon" src="../../assets/superMember.png" />

@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 0.6em;
+  /* margin-top: 0.6em; */
   background-color: #ffffff;
 }
 .header {

@@ -4,7 +4,7 @@ import Home from '@/pages/home/Home.vue'
 import Message from '@/pages/message/Message'
 import msgDetails from '@/pages/message/msgDetails'
 import Account from '@/pages/account/Account'
-import finished from '@/pages/account/finished'
+import myCourse from '@/pages/account/myCourse'
 import achievement from '@/pages/account/achievement'
 import courses from '@/pages/courses/courses'
 import certificates from '@/pages/account/certificates'
@@ -44,9 +44,9 @@ export default new Router({
       }
     },
     {
-      path: '/account/finished',
-      name: 'finished',
-      component: finished,
+      path: '/account/myCourse',
+      name: 'myCourse',
+      component: myCourse,
       meta: {
         showNav: true
       }
