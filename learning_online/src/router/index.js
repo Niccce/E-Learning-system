@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import regist from '@/pages/user/regist.vue'
+import login from '@/pages/user/login.vue'
 import Home from '@/pages/home/Home.vue'
 import Message from '@/pages/message/Message'
 import msgDetails from '@/pages/message/msgDetails'
@@ -14,6 +16,16 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/regist',
+      name: 'regist',
+      component: regist
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
     {
       path: '/',
       name: 'Home',

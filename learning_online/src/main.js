@@ -8,7 +8,9 @@ import './assets/styles/border.css'
 import VueResource from 'vue-resource'
 import axios from 'axios'
 import store from './store'
+import { ToastPlugin } from 'vux'
 
+Vue.use(ToastPlugin)
 Vue.use(VueResource)
 Vue.prototype.$axios = axios
 
