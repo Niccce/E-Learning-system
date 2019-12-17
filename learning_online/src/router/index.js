@@ -11,6 +11,7 @@ import achievement from '@/pages/account/achievement'
 import courses from '@/pages/courses/courses'
 import courseDetails from '@/pages/courses/courseDetails'
 import certificates from '@/pages/account/certificates'
+import news from '@/pages/news/news'
 
 Vue.use(Router)
 
@@ -80,6 +81,11 @@ export default new Router({
       path: '/courses/courseDetails',
       name: 'courseDetails',
       component: courseDetails
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: news
     }
   ]
 })
