@@ -96,6 +96,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * 在main.js中使用store
 
 * [vuex官方文档](https://vuex.vuejs.org/zh/guide/)
+* [5分钟带你入门vuex(vue状态管理)](https://www.cnblogs.com/mracale/p/10788593.html)
 
 # 界面开发
 - [ ] 登录
@@ -127,9 +128,8 @@ axios本身并不支持发送跨域的请求，没有提供相应的API，所以
 `npm install --save vue-resource`
 `npm install axios --save`
 
-[解决内容过多时，底部导航栏不固定的问题](https://blog.csdn.net/qq_41009742/article/details/85330503)
-
-参考：
+# 参考：
+* [解决内容过多时，底部导航栏不固定的问题](https://blog.csdn.net/qq_41009742/article/details/85330503)
 * [角标css实现](https://www.cnblogs.com/liulinjie/p/8484525.html)
 * [如何用vuex来管理顶部导航栏显示隐藏（状态管理）](https://blog.csdn.net/qq_33026699/article/details/80746008)
 * [《Vux踩坑记》 之 Tabbar](https://blog.csdn.net/weixin_34411563/article/details/91943570)

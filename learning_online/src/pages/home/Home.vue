@@ -5,7 +5,6 @@
     <news></news>
     <member-level></member-level>
     <recommended-courses></recommended-courses>
-    <button @click="getClass">点击</button>
   </div>
 </template>
 
@@ -24,17 +23,6 @@ export default {
     news,
     memberLevel,
     recommendedCourses
-  },
-  methods: {
-    getClass () {
-      var _this = this
-      _this.$axios.get('/api/class/getClass', {}).then(response => {
-        console.log(response.data)
-      })
-      // this.$http.post('/api/class/getClass').then(response => {
-      //   console.log(response)
-      // })
-    }
   }
 }
 </script>

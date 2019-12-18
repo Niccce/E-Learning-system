@@ -26,7 +26,6 @@
 <script>
 import { Tabbar, TabbarItem } from 'vux'
 // import { mapGetters, mapActions } from 'vuex'
-// import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
