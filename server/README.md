@@ -46,6 +46,11 @@ api/userApi.js ---- 测试用api示例
 # 遇到的问题
 1. [Vuejs 本地proxytable无效排查方案](https://blog.csdn.net/qq_35643562/article/details/84788861)
 
+# 参考
+* [登录注册](https://segmentfault.com/a/1190000014268935?utm_source=tag-newest)
+* [登录注册2](https://blog.csdn.net/wo05644660559/article/details/81707641)
+* [随机id不重复](https://segmentfault.com/a/1190000020393710)
+
 # 其他相关
 mysql相关操作
 ```text

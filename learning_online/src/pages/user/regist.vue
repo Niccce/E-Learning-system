@@ -9,7 +9,7 @@
         v-model="email"
         required
         is-type="email"
-        @on-blur='isEmail'
+        @on-blur="isEmail"
       >
       </x-input>
       <x-input
@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import { XInput, Box, Group, XButton, XHeader } from 'vux'
+import { XInput, Box, Group, XButton, XHeader } from "vux";
 
 export default {
-  name: 'regist',
+  name: "regist",
   components: {
     XInput,
     XButton,
@@ -61,22 +61,22 @@ export default {
     Box,
     XHeader
   },
-  data () {
+  data() {
     return {
-      email: '', // 邮箱
-      username: '', // 用户名
-      password: '', // 密码
-      passwordC: '', // 确认密码
+      email: "", // 邮箱
+      username: "", // 用户名
+      password: "", // 密码
+      passwordC: "", // 确认密码
       isemail: false
-    }
+    };
   },
   methods: {
-    isEmail () {
+    isEmail() {
       // 定义正则表达式的变量:邮箱正则
-      var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+      var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
       // 文本框不为空，并且验证邮箱正则成功，给出正确提示
       if (this.email !== null && this.email.search(reg) !== -1) {
-        this.isemail = true
+        this.isemail = true;
       } else {
         // this.$vux.toast.text('邮箱格式错误', 'middel')
         // this.$vux.toast.show({
@@ -84,29 +84,50 @@ export default {
         // })
       }
     },
-    handleRegist () {
+    handleRegist() {
       if (!this.email || !this.username || !this.password || !this.passwordC) {
-        this.$vux.toast.text('您有未填项，不能注册')
+        this.$vux.toast.text("您有未填项，不能注册");
       } else if (this.password !== this.passwordC) {
-        this.$vux.toast.text('两次输入的密码不一致')
+        this.$vux.toast.text("两次输入的密码不一致");
       } else if (!this.isemail) {
-        this.$vux.toast.text('邮箱格式错误')
+        this.$vux.toast.text("邮箱格式错误");
       } else {
-        this.$vux.toast.text('注册成功')
+        this.$axios
+          .post("/api/member/register", {
+            // id:'M000008',
+            email: this.email,
+            // sex:'男',
+            // grade:0,
+            // value:0,
+            username: this.username,
+            password: this.password
+          })
+          .then(response => {
+            // console.log(response);
+            if(response.data==-1){
+              this.$vux.toast.text("该用户已存在，请使用其他邮箱登录");
+            }
+            if(response.data==1){
+              this.$vux.toast.text("注册成功");
+              this.$router.push({
+                path: "/login"
+              });
+            }
+          });
       }
     }
   },
-  created () {
-    window.document.title = '注册'
+  created() {
+    window.document.title = "注册";
   }
-}
+};
 </script>
 
 <style scoped>
-.container{
+.container {
   background-color: white;
 }
-.to-login{
+.to-login {
   width: 100%;
   text-align: center;
   color: black;
