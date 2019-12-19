@@ -133,3 +133,4 @@ axios本身并不支持发送跨域的请求，没有提供相应的API，所以
 * [角标css实现](https://www.cnblogs.com/liulinjie/p/8484525.html)
 * [如何用vuex来管理顶部导航栏显示隐藏（状态管理）](https://blog.csdn.net/qq_33026699/article/details/80746008)
 * [《Vux踩坑记》 之 Tabbar](https://blog.csdn.net/weixin_34411563/article/details/91943570)
+* [v-for父子组件传值](https://segmentfault.com/q/1010000004330447)
