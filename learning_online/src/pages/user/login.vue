@@ -35,6 +35,7 @@
 
 <script>
 import { XInput, Box, Group, XButton, XHeader } from "vux";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "login",
   data() {
@@ -49,9 +50,14 @@ export default {
     XButton,
     Group,
     Box,
-    XHeader
+    XHeader,
+    mapState,
+    mapActions
   },
   methods: {
+    ...mapActions([
+      "getToken" // 触发actions里的 getInfo 函数，调动接口
+    ]),
     isEmail() {
       // 定义正则表达式的变量:邮箱正则
       var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
@@ -61,14 +67,14 @@ export default {
       }
     },
     change(val) {
-      console.log("on change", val);
+      // console.log("on change", val);
     },
     created() {
       window.document.title = "登录";
     },
     handleLogin() {
       if (!this.email || !this.password) {
-        this.$vux.toast.text("您有未填项，不能注册");
+        this.$vux.toast.text("您有未填项，不能登录");
       } else if (!this.isemail) {
         this.$vux.toast.text("邮箱格式错误");
       } else {
@@ -79,14 +85,14 @@ export default {
           })
           .then(response => {
             // console.log("登录");
-            console.log(response.data);
+            console.log(response);
             if (response.data == -1) {
               this.$vux.toast.text("该用户不存在");
             } else if (response.data == 0) {
               this.$vux.toast.text("密码错误");
-            } else if (response.data == 1) {
-              console.log("成功");
+            } else if (response.data.data == 1) {
               this.$vux.toast.text("登录成功");
+              this.getToken(response.data)
               // 跳转首页
               this.$router.push({
                 path: "/"

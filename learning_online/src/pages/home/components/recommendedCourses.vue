@@ -42,7 +42,7 @@ export default {
   },
   watch: {
     "$store.state.recommendedCourses"() {
-      console.log(1111);
+      // console.log(1111);
       this.coursesList = this.$store.state.recommendedCourses;
     }
   }

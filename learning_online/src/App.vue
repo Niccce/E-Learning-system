@@ -50,7 +50,7 @@ export default {
     },
     setHeight () {
       this.routerViewClass.height = window.innerHeight - 53 + 'px'
-      console.log(this.routerViewClass)
+      // console.log(this.routerViewClass)
     }
   },
   mounted () {

@@ -23,7 +23,7 @@ export default {
       var routerParams = this.$route
       // 将数据放在当前组件的数据内
       // this.memberLevel = routerParams
-      console.log(routerParams)
+      // console.log(routerParams)
     }
   },
   watch: {

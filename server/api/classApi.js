@@ -31,7 +31,7 @@ router.get('/getClass', (req, res) => {
       console.log(err)
     }
     if (results) {
-      console.log(results)
+      // console.log(results)
       res.send(results) //这里必须用res.send,因为有数据返回到客户端
       //   res.end()
     }
