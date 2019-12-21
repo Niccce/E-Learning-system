@@ -41,7 +41,7 @@
         <x-button class="learnBtn" type="primary" @click.native="btnToLearn">
           第三章：开始学习
         </x-button>
-        <x-button type="primary" @click.native="btnToLearn">
+        <x-button type="primary" @click.native="btnToExam">
           进入考试
         </x-button>
       </div>
@@ -50,7 +50,6 @@
           <x-textarea
             :max="50"
             :placeholder="btnTitle"
-            @on-blur="onEvent('blur')"
             v-model="myComment"
           ></x-textarea>
           <div class="comBtn">
@@ -87,7 +86,7 @@ export default {
       index: 0,
       isJoin: false, //是否加入了本课程
       btnTitle: "可对该课程进行评价",
-      myComment:''
+      myComment: ""
     };
   },
   methods: {
@@ -96,15 +95,20 @@ export default {
     },
     btnJoin() {
       this.isJoin = true;
-      console.log('join the course')
+      console.log("join the course");
     },
-    btnToLearn() {},
-    onEvent(event) {
-      console.log("on", event);
+    btnToLearn() {
+      this.$router.push({
+        name: "learn",//用path获取不到params参数，query用path和name都可以
+        params: { aa: 123, bb: 456 }
+      });
+    },
+    btnToExam(){
+
     },
     submitComment() {
-      console.log(this.myComment)
-      console.log('submit')
+      console.log(this.myComment);
+      console.log("submit");
     }
   }
 };
@@ -129,9 +133,9 @@ export default {
   bottom: 1em;
 }
 /* .learnBtn { */
-  /* text-align: center; */
-  /* display: table-cell; */
-  /* vertical-align: middle; */
+/* text-align: center; */
+/* display: table-cell; */
+/* vertical-align: middle; */
 /* } */
 .comBtn {
   text-align: right;
