@@ -41,5 +41,6 @@ export default {}
 }
 .comment{
   padding: .5em 1em;
+  border-bottom:0.1em solid #000
 }
 </style>

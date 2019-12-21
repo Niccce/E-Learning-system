@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
             // 过期时间
             // expiresIn: '60s'
             // expiresIn: 60 * 60 * 1 //1h
-            expiresIn: 60 * 5 //5min
+            expiresIn: 60 * 10 //10min
           }),
           code: 200,
           data: 1,
