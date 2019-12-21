@@ -40,7 +40,8 @@ router.post('/login', (req, res) => {
           code: 200,
           data: 1,
           userId: resultArray.mem_id,
-          username: resultArray.mem_name
+          username: resultArray.mem_name,
+          points: resultArray.mem_value
         })
         // res.send('1')
       } else {
@@ -103,7 +104,7 @@ router.post('/register', function(req, res) {
 function registerInfo(params, res) {
   var sql = $sql.member.add
   var sex = '男'
-  var grade = 0
+  var grade = 1 //默认LV1
   var value = 0
   //   var userId = id
   conn.query(

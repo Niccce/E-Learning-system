@@ -8,10 +8,11 @@ Vue.use(Vuex);
 // vuex中的数据源，我们需要保存的数据就保存在这里，可以在页面通过 this.$store.state来获取我们定义的数据；
 const state = {
   showNav: true,
-  token:localStorage.getItem('token') ? localStorage.getItem('token'):'',
+  token: localStorage.getItem("token") ? localStorage.getItem("token") : "",
   // token: "",
   userId: "",
-  userName: "",
+  username: "",
+  points:'',//积分
   // isLogin: 0,
   recommendedCourses: []
 };
@@ -20,14 +21,16 @@ const state = {
 const mutations = {
   saveRecommendedCourses(state, res) {
     state.recommendedCourses = res;
+    // console.log(res)
     console.log("保存推荐课程列表");
   },
   setTokenAndUser(state, res) {
-    state.Token = res.token;
+    console.log(res)
+    state.token = res.token;
     state.userId = res.userId;
-    state.userName = res.userName;
+    state.username = res.username;
+    state.points = res.points;
     localStorage.setItem("token", res.token); //把token保存到本地
-    console.log("保存Token、用户");
   },
   // changeIsLogin(state, res) {
   //   state.isLogin = res;
@@ -45,7 +48,6 @@ const mutations = {
 // actions就是mutation的加强版，它可以通过commit mutations中的方法来改变状态，最重要的是它可以进行异步操作。
 const actions = {
   getToken({ commit }, userData) {
-    console.log("获取Token/user");
     commit("setTokenAndUser", userData);
   },
   // 判断token有无过期

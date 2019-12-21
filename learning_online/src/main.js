@@ -63,7 +63,6 @@ router.beforeEach(async (to, from, next) => {
         } else {
           // 如果访问的不是login页面，则继续访问当前要访问的页面
           next();
-          console.log("3");
         }
       } else {
         // 如果token失效了
@@ -109,9 +108,9 @@ axios.interceptors.request.use(
     // 在发送请求之前做些什么
     //判断是否存在token，如果存在将每个页面header都添加token
     if (store.state.token) {
-      config.headers.Authorization = localStorage.getItem("token");
-      // console.log("Authorization:" + localStorage.getItem("token"));
       // config.headers.Authorization = localStorage.getItem("token");
+      config.headers.Authorization = store.state.token;
+      // console.log("Authorization:" + localStorage.getItem("token"));
     }
     return config;
   },
