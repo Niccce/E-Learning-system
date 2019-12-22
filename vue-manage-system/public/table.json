@@ -1,0 +1,167 @@
+{
+    "newsList": [{
+            "id": 1,
+            "title": "搬不走的好邻居、拆不散的真伙伴",
+            "reporter": "张博麟",
+            "source": "新华通讯社",
+            "date": "2019-11-1",
+            "sum": 190,
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png",
+            "content": "莫斯科动物园熊猫馆开馆仪式上，一个中国小男孩挤到习近平主席身边问道：“这是您第几次来到俄罗斯？”"
+        },
+        {
+            "id": 2,
+            "title": "习近平将对吉尔吉斯斯坦、塔吉克斯坦进行国事访问",
+            "reporter": "巩浩",
+            "source": "新华网",
+            "date": "2019-10-11",
+            "sum": 0,
+            "thumb": "https://lin-xin.gitee.io/images/post/node3.png",
+            "content": "新华社北京6月9日电 外交部发言人陆慷9日宣布：应吉尔吉斯共和国总统热恩别科夫邀请，国家主席习近平将于6月12日至14日对吉尔吉斯共和国进行国事访问并出席在比什凯克举行的上海合作组织成员国元首理事会第十九次会议。"
+        },
+        {
+            "id": 3,
+            "title": "中国为什么不是第一个5G商用国家？",
+            "reporter": "张雪",
+            "source": "投中网",
+            "date": "2019-11-11",
+            "sum": 50,
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png",
+            "content": "6月6日早上消息，工信部在预告消息发布三天后，正式向三大运营商和广电颁发5G牌照。这也就意味着，相较于之前2020年5G商用表，中国的5G商用时间整整提速了一年，我国将成为自韩国、美国、瑞士、英国之后，全球第五个开通5G服务的国家。"
+        }
+    ],
+    "newsPageTotal": 3,
+
+    "courseList": [{
+            "id": 1,
+            "title": "留学韩语【随到随学班】",
+            "teacher": "树树老师",
+            "date": "2016-12-12",
+            "type": "听,说",
+            "grade": 1,
+            "reward": 100,
+            "sum": 980,
+            "iftest": 1,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png",
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png",
+            "content": "学习目标：1. 了解韩国留学申请的材料及流程；2. 掌握留学期间，生活必需场景的会话表达；3. 了解赴韩准备、韩国生活等必备知识，减少留学障碍。适合对象：1. 有想去韩国留学或正在准备韩国留学的学员；2. 即将赴韩留学的准留学生或刚到韩国还需适应的留学生；3. 准备去韩国短期游学的学员；4. 对韩国留学感兴趣的学员。"
+        },
+        {
+            "id": 2,
+            "title": "沪江韩语口语L1-L11【1V1班】",
+            "teacher": "沪江网校韩语教学组",
+            "date": "2017-06-01",
+            "type": "说",
+            "grade": 0,
+            "reward": 50,
+            "sum": 1036,
+            "iftest": 0,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png",
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png",
+            "content": "学习目标：1.掌握6500个以上韩语词汇和400余个韩语句式和语法；2.能用所学基础知识和韩国人进行无障碍沟通；3.提升韩语的语音语调，提升口语表达的准确度和流畅度；4.涉及话题涉及生活、社会和部分专业性话题，能够用韩语进行演讲、陈述；5.能够借助工具书进行翻译工作。适合对象：1.韩语零基础或学过一些韩语的韩语爱好者；2.想要全面提升韩语综合能力，特别希望提升口语会话能力的学习者；3.想去留学，或希望将韩语作为工作语言的学习者；4.想进行1V1深入互动，提升韩语口语会话能力的学习者。"
+        },
+        {
+            "id": 3,
+            "title": "商务韩语【随到随学班】",
+            "teacher": "树树老师",
+            "date": "2018-12-25",
+            "type": "读、写",
+            "grade": 2,
+            "reward": 120,
+            "sum": 120,
+            "iftest": 1,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png",
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png",
+            "content": "学习目标：1. 学习地道的韩企办公室和商务表达；2. 了解韩企礼节文化及注意事项；3. 通过场景演练，学习多种商务场合会话；4. 提高商务沟通的能力、跨文化交流的能力。适合对象：1、具有韩国语能力考试(TOPIK)2级或以上水平的韩语学习者；2、想要提高商务韩语运用能力的韩语学习者；3、想要了解韩国常见商务礼仪和文化的韩语学习者。"
+        },
+        {
+            "id": 4,
+            "title": "商务韩语【随到随学班】-2",
+            "teacher": "树树老师",
+            "date": "2018-12-25",
+            "type": "读、写",
+            "grade": 2,
+            "reward": 120,
+            "sum": 120,
+            "iftest": 1,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png",
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png",
+            "content": "学习目标：1. 学习地道的韩企办公室和商务表达；2. 了解韩企礼节文化及注意事项；3. 通过场景演练，学习多种商务场合会话；4. 提高商务沟通的能力、跨文化交流的能力。适合对象：1、具有韩国语能力考试(TOPIK)2级或以上水平的韩语学习者；2、想要提高商务韩语运用能力的韩语学习者；3、想要了解韩国常见商务礼仪和文化的韩语学习者。"
+        }
+    ],
+    "coursePageTotal": 4,
+
+    "testList": [{
+            "id": 1,
+            "title": "留学韩语【随到随学班】",
+            "teacher": "树树老师",
+            "date": "2017-01-20",
+            "duration": 20,
+            "testNum": 120,
+            "signupNum": 980,
+            "iftest": 1,
+            "ifcheck": 1,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png"
+        },
+        {
+            "id": 2,
+            "title": "沪江韩语口语L1-L11【1V1班】",
+            "teacher": "沪江网校韩语教学组",
+            "date": "2017-06-01",
+            "duration": 0,
+            "testNum": 0,
+            "signupNum": 1036,
+            "iftest": 0,
+            "ifcheck": 0,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png"
+        },
+        {
+            "id": 3,
+            "title": "商务韩语【随到随学班】",
+            "teacher": "树树老师",
+            "date": "2019-02-01",
+            "duration": 20,
+            "testNum": 120,
+            "signupNum": 120,
+            "iftest": 1,
+            "ifcheck": 1,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png"
+        },
+        {
+            "id": 4,
+            "title": "商务韩语【随到随学班】-2",
+            "teacher": "树树老师",
+            "date": "2019-02-01",
+            "duration": 20,
+            "testNum": 120,
+            "signupNum": 120,
+            "iftest": 1,
+            "ifcheck": 0,
+            "source": "https://lin-xin.gitee.io/images/post/wms.png"
+        }
+    ],
+    "testPageTotal": 4,
+
+    "certificateList": [{
+        "id": 1,
+        "title": "留学韩语【随到随学班】",
+        "teacher": "沪江网校韩语教学组",
+        "date": "2017-09-01",
+        "testNum": 120,
+        "signupNum": 120,
+        "ifpromulgate": 1,
+        "source": "https://lin-xin.gitee.io/images/post/wms.png"
+    },
+    {
+        "id": 2,
+        "title": "商务韩语【随到随学班】",
+        "teacher": "树树老师",
+        "date": "2019-02-01",
+        "testNum": 120,
+        "signupNum": 120,
+        "ifpromulgate": 0,
+        "source": "https://lin-xin.gitee.io/images/post/wms.png"
+    }
+],
+"certificatePageTotal": 2
+}

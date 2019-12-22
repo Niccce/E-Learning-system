@@ -54,7 +54,6 @@
           ></x-textarea>
           <div class="comBtn">
             <x-button
-              class="comBtn"
               type="primary"
               mini
               @click.native="submitComment"
@@ -99,12 +98,15 @@ export default {
     },
     btnToLearn() {
       this.$router.push({
-        name: "learn",//用path获取不到params参数，query用path和name都可以
+        name: "learn", //用path获取不到params参数，query用path和name都可以
         params: { aa: 123, bb: 456 }
       });
     },
-    btnToExam(){
-
+    btnToExam() {
+      this.$router.push({
+        name: "exam", //用path获取不到params参数，query用path和name都可以
+        params: { aa: 123, bb: 456 }
+      });
     },
     submitComment() {
       console.log(this.myComment);
