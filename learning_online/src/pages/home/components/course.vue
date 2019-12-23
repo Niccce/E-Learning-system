@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// 推荐课程的课程信息组件
 import { mapState, mapActions } from "vuex";
 export default {
   components: {
@@ -25,9 +26,9 @@ export default {
     };
   },
   methods: {
-    ...mapActions([
-      "getRecommendedCourses" // 触发actions里的 getInfo 函数，调动接口
-    ]),
+    // ...mapActions([
+    //   "getRecommendedCourses" // 触发actions里的 getInfo 函数，调动接口
+    // ]),
     // 获取首页推荐课程
     // getClass () {
     //   var _this = this
@@ -42,21 +43,28 @@ export default {
     //   // })
     // },
     onClick() {
-      this.$router.push({ path: "/courses/courseDetails" });
+      // this.$router.push({ path: "/courses/courseDetails" });
+      this.$router.push({
+        path: "/courses/courseDetails",
+        query: {
+          cla_id: this.data.cla_id
+          // grade: this.data.cla_grade
+        }
+      });
     }
   },
-  created() {
+  // created() {
     // this.getClass()
     // this.$store.dispatch('getRecommendedCourses')
-    this.getRecommendedCourses();
-  },
-  computed: {},
-  watch: {
-    "$store.state.recommendedCourses"() {
-      // console.log(1111);
-      this.coursesList = this.$store.state.recommendedCourses;
-    }
-  }
+    // this.getRecommendedCourses();
+  // },
+  // computed: {},
+  // watch: {
+  //   "$store.state.recommendedCourses"() {
+  //     // console.log(1111);
+  //     this.coursesList = this.$store.state.recommendedCourses;
+  //   }
+  // }
   // computed: {
   //   ...mapState([
   //     "recommendedCourses" // 获取store里的数据，放在computed中可以实时更新

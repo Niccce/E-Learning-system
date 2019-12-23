@@ -21,8 +21,8 @@ const state = {
 const mutations = {
   saveRecommendedCourses(state, res) {
     state.recommendedCourses = res;
-    console.log(res)
-    console.log("保存推荐课程列表");
+    // console.log(res)
+    // console.log("保存推荐课程列表");
   },
   setTokenAndUser(state, res) {
     console.log(res)

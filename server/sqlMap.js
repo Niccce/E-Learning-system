@@ -6,6 +6,7 @@ var sqlMap = {
     get: "select * from class",
     //查询课程
     search: "select * from class where (cla_name = ?)",
+    searchById: "select * from class where (cla_id=?)",
     //职员添加课程
     add:
       "insert into class (cla_id,cla_name,cla_content,cla_teacher,cla_iftest,cla_date,cla_type,cla_value,cla_video,cla_ppt,cla_grade,cla_sum) values (?,?,?,?,?,?,?,?,?,?,?,?)",

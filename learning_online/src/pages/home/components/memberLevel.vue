@@ -49,7 +49,7 @@ export default {
         path: "/courses",
         query: {
           memberLevel: "普通会员",
-          grade: "50"
+          grade: 1
         }
       });
     },
@@ -58,7 +58,7 @@ export default {
         path: "/courses",
         query: {
           memberLevel: "高级会员",
-          grade: "200"
+          grade: 2
         }
       });
     },
@@ -67,7 +67,7 @@ export default {
         path: "/courses",
         query: {
           memberLevel: "特级会员",
-          grade: "1000"
+          grade: 3
         }
       });
     }

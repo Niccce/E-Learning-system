@@ -146,29 +146,6 @@ export default {
       // }
       console.log(goal);
 
-      // 管理员发布课程
-      // var _this = this
-      // _this.$axios
-      //   .post('/api/class/addclass', {
-      //     cla_id: 'C001a2',
-      //     cla_name: '123',
-      //     cla_content: '12345',
-      //     cla_teacher: '123456',
-      //     cla_iftest: 1,
-      //     cla_date: '2018-12-24T16:00:00.000Z',
-      //     cla_type: '123456789',
-      //     cla_value: 2,
-      //     cla_video: null,
-      //     cla_ppt: '123456789',
-      //     cla_grade: 0
-      //   })
-      //   .then(response => {
-      //     this.coursesList = response.data
-      //     console.log('前端')
-      //     // console.log(params)
-      //     console.log(this.coursesList)
-      //   })
-
       //会员添加课程
       // var _this = this;
       // _this.$axios
@@ -180,18 +157,6 @@ export default {
       //   })
       //   .then(response => {
       //     console.log("success");
-      //   });
-
-      //职员删除课程
-      // var _this = this;
-      // _this.$axios
-      //   .post("/api/class/deleteinclass", {
-      //     cla_id: "C00001"
-      //   })
-      //   .then(response => {
-      //     this.coursesList = response.data;
-      //     console.log("职员删除课程");
-      //     console.log(this.coursesList);
       //   });
 
       //会员删除课程

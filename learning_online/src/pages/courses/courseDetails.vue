@@ -9,13 +9,10 @@
       <tab-item v-if="isJoin === true">进度</tab-item>
     </tab>
     <div id="intro" v-if="index === 0">
-      <span>ES6微课</span>
-      <p>课程简介：</p>
-      <p>课程老师：</p>
-      <p>课程类型：</p>
-      <span
-        >ES6微课介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</span
-      >
+      <span>{{courseInfo.cla_name}}</span>
+      <p>课程老师：{{courseInfo.cla_teacher}}</p>
+      <p>课程类型：{{courseInfo.cla_type}}</p>
+      <p>课程简介：{{courseInfo.cla_content}}</p>
     </div>
     <!-- <div id="catalogue" v-if="index === 1">2</div> -->
     <div id="comments" v-if="index === 1 && isJoin === false">
@@ -53,11 +50,7 @@
             v-model="myComment"
           ></x-textarea>
           <div class="comBtn">
-            <x-button
-              type="primary"
-              mini
-              @click.native="submitComment"
-            >
+            <x-button type="primary" mini @click.native="submitComment">
               发表
             </x-button>
           </div>
@@ -85,7 +78,8 @@ export default {
       index: 0,
       isJoin: false, //是否加入了本课程
       btnTitle: "可对该课程进行评价",
-      myComment: ""
+      myComment: "",
+      courseInfo:[]
     };
   },
   methods: {
@@ -111,8 +105,28 @@ export default {
     submitComment() {
       console.log(this.myComment);
       console.log("submit");
+    },
+    getCourseInfo() {
+      var _this = this;
+      _this.$vux.loading.show({
+        text: "加载中.."
+      });
+      var routerParams = _this.$route;
+      // console.log(routerParams.query.cla_id);
+      _this.$axios
+        .post("/api/class/searchClassById", {
+          cla_id: routerParams.query.cla_id
+        })
+        .then(response => {
+          this.courseInfo = response.data[0];
+          console.log(this.courseInfo)
+          this.$vux.loading.hide();
+        });
     }
-  }
+  },
+  created() {
+    this.getCourseInfo()
+  },
 };
 </script>
 

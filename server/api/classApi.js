@@ -37,24 +37,36 @@ router.get("/getClass", (req, res) => {
 });
 
 //搜索（查询）课程
-router.post('/searchClass', (req, res) => {
+router.post("/searchClass", (req, res) => {
   var sql = $sql.class.search;
   var params = req.body;
   console.log(params.cla_name);
-  conn.query(sql,
-        [
-          params.cla_name
-        ],
-        (err, result) =>{
-          if (err) {
-            console.log(err)
-          }
-          if (result) {
-              res.send(result);
-              console.log('result', result);
-          }
-      });
+  conn.query(sql, [params.cla_name], (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    if (result) {
+      res.send(result);
+      console.log("result", result);
+    }
   });
+});
+
+//根据id获取课程
+router.post("/searchClassById", (req, res) => {
+  var sql = $sql.class.searchById;
+  var params = req.body;
+  console.log(params.cla_id);
+  conn.query(sql, [params.cla_id], (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    if (result) {
+      res.send(result);
+      // console.log("result", result);
+    }
+  });
+});
 
 // 职员添加课程
 router.post("/addclass", (req, res) => {
@@ -111,7 +123,7 @@ router.post("/deleteinclass", (req, res) => {
 router.post("/vipClass", (req, res) => {
   var sql = $sql.class.vip;
   var params = req.body;
-  console.log(params.cla_name);
+  console.log(sql);
   conn.query(sql, [params.cla_grade], (err, result) => {
     if (err) {
       console.log(err);

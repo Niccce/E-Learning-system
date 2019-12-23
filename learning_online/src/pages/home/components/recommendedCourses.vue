@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header">
       <div>推荐课程</div>
-      <router-link to="/account">
+      <router-link to="/">
         <div>
           <span class="more">更多</span>
           <img class="arrow" slot="icon" src="../../../assets/rightArrow.png" />

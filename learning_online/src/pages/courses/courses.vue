@@ -32,6 +32,7 @@ export default {
       var routerParams = _this.$route
       // 将数据放在当前组件的数据内
       _this.memberLevel=routerParams.query.memberLevel
+      console.log(routerParams.query.grade)
       //  会员等级课程列表
       _this.$axios
         .post("/api/class/vipClass", {
