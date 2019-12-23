@@ -5,7 +5,8 @@
 // const fs = require('fs')
 // const path = require('path')
 const classApi = require('./api/classApi')
-const memberApi = require('./api/memberApi')
+const memberApi = require("./api/memberApi");
+const menprogressApi = require("./api/menprogress");
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
@@ -19,7 +20,8 @@ app.use(
 
 // 后端api路由
 app.use('/api/class', classApi)
-app.use('/api/member', memberApi)
+app.use("/api/member", memberApi);
+app.use("/api/menprogress", menprogressApi);
 
 
 // 监听端口

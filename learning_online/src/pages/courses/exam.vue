@@ -135,15 +135,101 @@ export default {
   },
   methods: {
     getParams() {
-      //接收函数
+      // 接收函数
       console.log(this.$route);
     },
+
     submitAnswer() {
       let goal = 0;
-      if (this.choiceOne.value === this.questionOne.answer) {
-        goal += 20;
-      }
+      // if (this.choiceOne.value === this.questionOne.answer) {
+      //   goal += 20
+      // }
       console.log(goal);
+
+      // 管理员发布课程
+      // var _this = this
+      // _this.$axios
+      //   .post('/api/class/addclass', {
+      //     cla_id: 'C001a2',
+      //     cla_name: '123',
+      //     cla_content: '12345',
+      //     cla_teacher: '123456',
+      //     cla_iftest: 1,
+      //     cla_date: '2018-12-24T16:00:00.000Z',
+      //     cla_type: '123456789',
+      //     cla_value: 2,
+      //     cla_video: null,
+      //     cla_ppt: '123456789',
+      //     cla_grade: 0
+      //   })
+      //   .then(response => {
+      //     this.coursesList = response.data
+      //     console.log('前端')
+      //     // console.log(params)
+      //     console.log(this.coursesList)
+      //   })
+
+      //会员添加课程
+      // var _this = this;
+      // _this.$axios
+      //   .get("/api/menprogress/addinClass", {
+      //     params: {
+      //       mem_id: "M00004",
+      //       cla_id: "C00002"
+      //     }
+      //   })
+      //   .then(response => {
+      //     console.log("success");
+      //   });
+
+      //职员删除课程
+      // var _this = this;
+      // _this.$axios
+      //   .post("/api/class/deleteinclass", {
+      //     cla_id: "C00001"
+      //   })
+      //   .then(response => {
+      //     this.coursesList = response.data;
+      //     console.log("职员删除课程");
+      //     console.log(this.coursesList);
+      //   });
+
+      //会员删除课程
+      // var _this = this;
+      // _this.$axios
+      //   .post("/api/menprogress/deleteclass", {
+      //     mem_id: "M00002",
+      //     cla_id: "C00001"
+      //   })
+      //   .then(response => {
+      //     this.coursesList = response.data;
+      //     console.log("会员删除课程");
+      //     console.log(this.coursesList);
+      //   });
+
+      //会员等级课程列表
+      // var _this = this;
+      // _this.$axios
+      //   .post("/api/class/vipClass", {
+      //     cla_grade: "1"
+      //   })
+      //   .then(response => {
+      //     this.coursesList = response.data;
+      //     console.log("会员等级课程列表");
+      //     console.log(this.coursesList);
+      //   });
+
+      // 查询课程
+      var _this = this;
+      _this.$axios
+        .post("/api/class/searchClass", {
+          cla_name: "123"
+        })
+        .then(response => {
+          this.coursesList = response.data;
+          console.log("根据课程名称查询课程信息");
+          console.log(this.coursesList);
+        });
     }
   }
 };

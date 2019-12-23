@@ -20,30 +20,27 @@
                 ref="multipleTable"
                 header-cell-class-name="table-header"
                 @selection-change="handleSelectionChange"
-                :default-sort = "{prop: 'id', order: 'incending'}"
+                :default-sort = "{prop: 'cla_id', order: 'incending'}"
             >
-                <el-table-column prop="id" label="ID" width="55" align="center"></el-table-column>
-                <el-table-column prop="title" label="课程标题" width="300"></el-table-column>
-                <el-table-column prop="teacher" label="任课教师"></el-table-column>
-                <el-table-column sortable prop="date" label="考试日期"></el-table-column>
-                <el-table-column prop="duration" label="考试时长"></el-table-column>
+                <el-table-column prop="cla_id" sortable label="课程编号" width="120" align="center"></el-table-column>
+                <el-table-column prop="cla_name" label="课程标题" width="300"></el-table-column>
+                <el-table-column prop="cla_teacher" label="任课教师"></el-table-column>
+                <el-table-column sortable prop="test_date" label="考试日期"></el-table-column>
+                <el-table-column label="考试时长">
+                    <template slot-scope="scope">
+                        {{scope.row.test_time}} 分钟
+                    </template>
+                </el-table-column>
                 <el-table-column label="考试 / 报名人数">
                     <template slot-scope="scope">
                         {{scope.row.testNum}} / {{scope.row.signupNum}}
                     </template>
                 </el-table-column>
-                <el-table-column prop="iftest" sortable label="考试状态" align="center">
+                <el-table-column prop="cla_iftest" sortable label="考试状态" align="center">
                     <template slot-scope="scope">
                         <el-tag
-                            :type="scope.row.iftest===0?'info':'danger'"
-                        >{{scope.row.iftest===0?'未发布考试':'已发布考试'}}</el-tag>
-                    </template>
-                </el-table-column>
-                <el-table-column prop="ifcheck" sortable label="改卷状态" align="center">
-                    <template slot-scope="scope">
-                        <el-tag
-                            :type="scope.row.ifcheck===0?'info':'danger'"
-                        >{{scope.row.ifcheck===0?'未改卷':'已改卷'}}</el-tag>
+                            :type="scope.row.cla_iftest===0?'info':'danger'"
+                        >{{scope.row.cla_iftest===0?'未发布考试':'已发布考试'}}</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" width="180" align="center">
@@ -51,16 +48,9 @@
                         <el-button
                             type="text"
                             icon="el-icon-document"
-                            :disabled="scope.row.iftest===0?false:true"
+                            :disabled="scope.row.cla_iftest===0?false:true"
                             @click="handleEdit(scope.$index, scope.row)"
                         >发布考试</el-button>
-                        <el-button
-                            type="text"
-                            icon="el-icon-document-checked"
-                            :disabled="scope.row.ifcheck===0?false:true"
-                            :class="scope.row.ifcheck===0?'green':''"
-                            @click="handleDelete(scope.$index, scope.row)"
-                        >改卷</el-button>
                     </template>
                 </el-table-column>
             </el-table>

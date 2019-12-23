@@ -10,73 +10,53 @@
         </div>
         <div class="container">
             <div class="form-box">
-                <el-form ref="form" :model="form" label-width="80px">
-                    <el-form-item label="课程标题">
-                        <el-input 
-                            v-model="form.title"
-                            maxlength="20"
-                            show-word-limit
-                        ></el-input>
+                <el-form ref="courseForm" :model="courseForm" :rules="rulesForm" label-width="80px" class="demo-ruleForm">
+                    <el-form-item label="课程标题" prop="cla_name">
+                        <el-input v-model="courseForm.cla_name" maxlength="35" show-word-limit></el-input>
                     </el-form-item>
-                    <el-form-item label="课程教师">
-                        <el-input
-                            v-model="form.writer"
-                            style="width:46%"
-                            maxlength="5"
-                            show-word-limit
-                        ></el-input>
+                    <el-form-item label="课程教师" prop="cla_teacher">
+                        <el-input v-model="courseForm.cla_teacher" style="width:46%" maxlength="5" show-word-limit></el-input>
                     </el-form-item>
-                    <el-form-item label="课程日期">
+                    <el-form-item label="发布日期" prop="cla_date">
                         <el-col :span="11">
                             <el-date-picker
                                 type="date"
-                                placeholder="选择开始日期"
-                                v-model="form.date1"
-                                value-format="yyyy-MM-dd"
-                                style="width: 100%;"
-                            ></el-date-picker>
-                        </el-col>
-                        <el-col class="line" :span="2">-</el-col>
-                        <el-col :span="11">
-                            <el-date-picker
-                                placeholder="选择结束日期"
-                                v-model="form.date2"
+                                placeholder="选择日期"
+                                v-model="courseForm.cla_date"
                                 value-format="yyyy-MM-dd"
                                 style="width: 100%;"
                             ></el-date-picker>
                         </el-col>
                     </el-form-item>
-                    <el-form-item label="课程类型">
-                        <el-radio-group v-model="form.resource">
-                            <el-radio label="听"></el-radio>
-                            <el-radio label="说"></el-radio>
-                            <el-radio label="读"></el-radio>
-                            <el-radio label="写"></el-radio>
+                    <el-form-item label="课程类型" prop="cla_type">
+                        <el-radio-group v-model="courseForm.cla_type">
+                            <el-radio label="设计类"></el-radio>
+                            <el-radio label="实践类"></el-radio>
                         </el-radio-group>
                     </el-form-item>
-                    <el-form-item label="等级权限">
-                        <el-radio-group v-model="form.resource">
+                    <el-form-item label="等级权限" prop="cla_grade">
+                        <el-radio-group v-model="courseForm.cla_grade">
                             <el-radio label="普通会员"></el-radio>
                             <el-radio label="高级会员"></el-radio>
                             <el-radio label="特级会员"></el-radio>
                         </el-radio-group>
                     </el-form-item>
-                    <el-form-item label="积分奖励">
-                        <el-input
-                            v-model="form.reward"
+                    <el-form-item label="积分奖励" prop="cla_value">
+                        <el-input-number
+                            v-model="courseForm.cla_value"
                             type="number"
                             style="width:46%"
+                            controls-position="right"
                             placeholder="上限为999……"
-                            max="999"
-                            min="0"
-                            show-word-limit
-                        ></el-input>
+                            :max="999"
+                            :min="0"
+                        ></el-input-number>
                     </el-form-item>
-                    <el-form-item label="课程简介">
+                    <el-form-item label="课程简介" prop="cla_content">
                         <el-input
                             type="textarea"
                             rows="7"
-                            v-model="form.introduction"
+                            v-model="courseForm.cla_content"
                             placeholder="简要描述课程内容……"
                             maxlength="300"
                             show-word-limit
@@ -107,7 +87,7 @@
                         </el-upload>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="onSubmit">课程发布</el-button>
+                        <el-button type="primary" @click="onSubmit('courseForm')">课程发布</el-button>
                         <el-button>取消</el-button>
                     </el-form-item>
                 </el-form>
@@ -121,79 +101,68 @@ export default {
     name: 'baseform',
     data() {
         return {
-            fileList: [
-                {
-                    name: 'food.jpeg',
-                    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-                }
-            ],
-            options: [
-                {
-                    value: 'guangdong',
-                    label: '广东省',
-                    children: [
-                        {
-                            value: 'guangzhou',
-                            label: '广州市',
-                            children: [
-                                {
-                                    value: 'tianhe',
-                                    label: '天河区'
-                                },
-                                {
-                                    value: 'haizhu',
-                                    label: '海珠区'
-                                }
-                            ]
-                        },
-                        {
-                            value: 'dongguan',
-                            label: '东莞市',
-                            children: [
-                                {
-                                    value: 'changan',
-                                    label: '长安镇'
-                                },
-                                {
-                                    value: 'humen',
-                                    label: '虎门镇'
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    value: 'hunan',
-                    label: '湖南省',
-                    children: [
-                        {
-                            value: 'changsha',
-                            label: '长沙市',
-                            children: [
-                                {
-                                    value: 'yuelu',
-                                    label: '岳麓区'
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            form: {
-                title: '',
-                introduction: '',
-                writer: '',
-                date1: '',
-                date2: '',
-                reward: '',
-                source: '',
-                content: ''
+            fileList: [],
+            courseForm: {
+                cla_id: '',
+                cla_name: '',
+                cla_content: '',
+                cla_teacher: '',
+                cla_iftest: 0,
+                cla_date: '',
+                cla_type: '',
+                cla_value: 0,
+                cla_video: '',
+                cla_ppt: '',
+                cla_grade: 0,
+                cla_sum: 0
+            },
+            rulesForm: {
+                cla_name: [
+                    { required: true, message: '请输入课程标题', trigger: 'blur' },
+                    { min: 3, max: 35, message: '长度在 3 到 35 个字符', trigger: 'blur' }
+                ],
+                cla_content: [
+                    { required: true, message: '请输入课程简介', trigger: 'change' },
+                    { min: 3, max: 300, message: '长度在 3 到 300 个字符', trigger: 'blur' }
+                ],
+                cla_teacher: [
+                    { required: true, message: '请输入任课老师', trigger: 'change' }
+                ],
+                cla_date: [
+                    { required: true, message: '请选择时间', trigger: 'change' }
+                ],
+                cla_type: [
+                    { required: true, message: '请选择课程类别', trigger: 'change' }
+                ],
+                cla_value: [
+                    { required: true, message: '请填写学习课程所获积分', trigger: 'change' },
+                    { min: 0, max: 999, message: '数值在 0 ~ 999 之间', trigger: 'blur' }
+                ],
+                cla_grade: [
+                    { required: true, message: '请选择课程权限', trigger: 'change' }
+                ]
+            },
+            newsForm: {
+                new_id: this.$route.params.new_id,
+                new_name: this.$route.params.new_name,
+                new_reporter: this.$route.params.new_reporter,
+                new_date: this.$route.params.new_date,
+                new_source: this.$route.params.new_source,
+                new_content: this.$route.params.new_content,
+                new_sum: this.$route.params.new_sum
             }
         };
     },
     methods: {
-        onSubmit() {
-            this.$message.success('提交成功！');
+        onSubmit(formName) {
+            this.$refs[formName].validate((valid) => {
+                if (valid) {
+                    this.$message.success('提交成功！');
+                } else {
+                    console.log('error submit!!');
+                    return false;
+                }
+                });
         },
         beforeAvatarUpload(file) {         
             //上传文件格式        

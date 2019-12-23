@@ -10,12 +10,6 @@
         </div>
         <div class="container">
             <div class="handle-box">
-                <el-button
-                    type="primary"
-                    icon="el-icon-delete"
-                    class="handle-del mr10"
-                    @click="delAllSelection"
-                >批量删除</el-button>
                 <el-input v-model="query.title" placeholder="课程标题" class="handle-input mr10"></el-input>
                 <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>
             </div>
@@ -23,72 +17,72 @@
                 :data="courseData"
                 border
                 class="table"
-                ref="multipleTable"
                 header-cell-class-name="table-header"
-                @selection-change="handleSelectionChange"
-                :default-sort = "{prop: 'id', order: 'incending'}"
+                :default-sort = "{prop: 'cla_id', order: 'incending'}"
             >
                  <el-table-column type="expand">
                     <template slot-scope="props">
                         <el-form label-position="left" inline class="demo-table-expand">
                         <el-form-item label="课程标题">
-                            <span>{{ props.row.title }}</span>
+                            <span>{{ props.row.cla_name }}</span>
                         </el-form-item>
                         <el-form-item label="任课老师">
-                            <span>{{ props.row.teacher }}</span>
+                            <span>{{ props.row.cla_teacher }}</span>
                         </el-form-item>
                         <el-form-item label="发布日期">
-                            <span>{{ props.row.date }}</span>
+                            <span>{{ props.row.cla_date }}</span>
                         </el-form-item>
                         <el-form-item label="报名人数">
-                            <span>{{ props.row.sum }}</span>
+                            <span>{{ props.row.cla_sum }}</span>
                         </el-form-item>
                         <el-form-item label="课程权限">
-                            <span>{{ props.row.grade===0?'普通会员':(props.row.grade===1?'高级会员':'特级会员' )}}</span>
+                            <span>{{ props.row.cla_grade===0?'普通会员':(props.row.cla_grade===1?'高级会员':'特级会员' )}}</span>
                         </el-form-item>
                         <el-form-item label="课程积分">
-                            <span>{{ props.row.reward }}</span>
+                            <span>{{ props.row.cla_value }}</span>
                         </el-form-item>
                         <el-form-item label="课程类别">
-                            <span>{{ props.row.type }}</span>
+                            <span>{{ props.row.cla_type }}</span>
                         </el-form-item>
-                        <el-form-item label="课程资源">
-                            <span>{{ props.row.source }}</span>
+                        <el-form-item label="视频资源">
+                            <span>{{ props.row.cla_video }}</span>
+                        </el-form-item>
+                        <el-form-item label="课件资源">
+                            <span>{{ props.row.cla_ppt }}</span>
                         </el-form-item>
                         <el-form-item label="课程简介">
-                            <span>{{ props.row.content }}</span>
+                            <span>{{ props.row.cla_content }}</span>
                         </el-form-item>
                         </el-form>
                     </template>
                 </el-table-column>
-                <el-table-column type="selection" width="55" align="center"></el-table-column>
-                <el-table-column prop="id" label="ID" width="55" align="center"></el-table-column>
-                <el-table-column prop="title" label="课程标题" width="300"></el-table-column>
-                <el-table-column prop="teacher" label="任课教师"></el-table-column>
+                <el-table-column prop="cla_id" sortable label="ID" width="90" align="center"></el-table-column>
+                <el-table-column prop="cla_name" label="课程标题" width="300"></el-table-column>
+                <el-table-column prop="cla_teacher" label="任课教师"></el-table-column>
                 <el-table-column label="封面(查看大图)" align="center">
                     <template slot-scope="scope">
                         <el-image
                             class="table-td-thumb"
-                            :src="scope.row.thumb"
-                            :preview-src-list="[scope.row.thumb]"
+                            :src="scope.row.cla_img"
+                            :preview-src-list="[scope.row.cla_img]"
                         ></el-image>
                     </template>
                 </el-table-column>
-                <el-table-column sortable prop="date" label="发布日期"></el-table-column>
-                <el-table-column prop="sum" label="报名人数"></el-table-column>
-                <el-table-column prop="grade" sortable label="权限" align="center">
+                <el-table-column sortable prop="cla_date" label="发布日期"></el-table-column>
+                <el-table-column prop="cla_sum" label="报名人数"></el-table-column>
+                <el-table-column prop="cla_grade" sortable label="权限" align="center">
                     <template slot-scope="scope">
                         <el-tag
                             effect="dark"
-                            :type="scope.row.grade===0?'info':(scope.row.grade===1?'':'danger')"
-                        >{{scope.row.grade===0?'普通会员':(scope.row.grade===1?'高级会员':'特级会员')}}</el-tag>
+                            :type="scope.row.cla_grade===0?'info':(scope.row.cla_grade===1?'':'danger')"
+                        >{{scope.row.cla_grade===0?'普通会员':(scope.row.cla_grade===1?'高级会员':'特级会员')}}</el-tag>
                     </template>
                 </el-table-column>
-                <el-table-column prop="iftest" sortable label="状态" align="center">
+                <el-table-column prop="cla_iftest" sortable label="状态" align="center">
                     <template slot-scope="scope">
                         <el-tag
-                            :type="scope.row.iftest===1?'success':(scope.row.state===0?'danger':'')"
-                        >{{scope.row.iftest===1?'已考试':'未考试'}}</el-tag>
+                            :type="scope.row.cla_iftest===1?'danger':(scope.row.cla_iftest===0?'info':'')"
+                        >{{scope.row.cla_iftest===1?'已发布考试':'未发布考试'}}</el-tag>
                     </template>
                 </el-table-column>
                 <el-table-column label="操作" width="180" align="center">
@@ -96,13 +90,13 @@
                         <el-button
                             type="text"
                             icon="el-icon-edit"
-                            @click="handleEdit(scope.$index, scope.row)"
+                            @click="handleEdit(scope.row)"
                         >编辑</el-button>
                         <el-button
                             type="text"
                             icon="el-icon-delete"
                             class="red"
-                            @click="handleDelete(scope.$index, scope.row)"
+                            @click="handleDelete(scope.$index, scope.row, scope.row.cla_id)"
                         >删除</el-button>
                     </template>
                 </el-table-column>
@@ -118,22 +112,6 @@
                 ></el-pagination>
             </div>
         </div>
-
-        <!-- 编辑弹出框 -->
-        <el-dialog title="编辑" :visible.sync="editVisible" width="30%">
-            <el-form ref="form" :model="form" label-width="70px">
-                <el-form-item label="用户名">
-                    <el-input v-model="form.name"></el-input>
-                </el-form-item>
-                <el-form-item label="地址">
-                    <el-input v-model="form.address"></el-input>
-                </el-form-item>
-            </el-form>
-            <span slot="footer" class="dialog-footer">
-                <el-button @click="editVisible = false">取 消</el-button>
-                <el-button type="primary" @click="saveEdit">确 定</el-button>
-            </span>
-        </el-dialog>
     </div>
 </template>
 
@@ -144,19 +122,12 @@ export default {
     data() {
         return {
             query: {
-                address: '',
                 name: '',
                 pageIndex: 1,
                 pageSize: 10
             },
             courseData: [],
-            multipleSelection: [],
-            delList: [],
-            editVisible: false,
             coursePageTotal: 0,
-            form: {},
-            idx: -1,
-            id: -1
         };
     },
     created() {
@@ -177,7 +148,7 @@ export default {
             this.getData();
         },
         // 删除操作
-        handleDelete(index, row) {
+        handleDelete(index, row, id) {
             // 二次确认删除
             this.$confirm('确定要删除吗？', '提示', {
                 type: 'warning'
@@ -185,34 +156,35 @@ export default {
                 .then(() => {
                     this.$message.success('删除成功');
                     this.courseData.splice(index, 1);
+
+                    console.log("传递要删除的课程编号",id);
+                    /***
+                     * 在这里补充删除数据库新闻的代码
+                     */
+
                 })
                 .catch(() => {});
         },
-        // 多选操作
-        handleSelectionChange(val) {
-            this.multipleSelection = val;
-        },
-        delAllSelection() {
-            const length = this.multipleSelection.length;
-            let str = '';
-            this.delList = this.delList.concat(this.multipleSelection);
-            for (let i = 0; i < length; i++) {
-                str += this.multipleSelection[i].name + ' ';
-            }
-            this.$message.error(`删除了${str}`);
-            this.multipleSelection = [];
-        },
         // 编辑操作
-        handleEdit(index, row) {
-            this.idx = index;
-            this.form = row;
-            this.editVisible = true;
-        },
-        // 保存编辑
-        saveEdit() {
-            this.editVisible = false;
-            this.$message.success(`修改第 ${this.idx + 1} 行成功`);
-            this.$set(this.courseData, this.idx, this.form);
+        handleEdit(row) {
+            console.log("管理新闻页面传递的数据：",row);
+            this.$router.push({
+                path: '/CourseReleased',
+                name: 'CourseReleased',
+                params: {
+                    cla_id: row.cla_id,
+                    cla_name: row.cla_name,
+                    cla_teacher: row.cla_teacher,
+                    cla_date: row.cla_date,
+                    cla_type: row.cla_type,
+                    cla_grade: row.cla_grade,
+                    cla_iftest: row.cla_iftest,
+                    cla_video: row.cla_video,
+                    cla_ppt: row.cla_ppt,
+                    cla_img: row.cla_img,
+                    cla_content: row.cla_content
+                }
+            })
         },
         // 分页导航
         handlePageChange(val) {

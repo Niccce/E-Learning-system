@@ -19,31 +19,24 @@
                 ref="multipleTable"
                 header-cell-class-name="table-header"
                 @selection-change="handleSelectionChange"
-                :default-sort = "{prop: 'id', order: 'incending'}"
+                :default-sort = "{prop: 'cla_id', order: 'incending'}"
             >
-                <el-table-column prop="id" label="ID" width="55" align="center"></el-table-column>
-                <el-table-column prop="title" label="课程标题" width="300"></el-table-column>
-                <el-table-column prop="teacher" label="任课教师"></el-table-column>
-                <el-table-column prop="date" label="考试日期"></el-table-column>
-                <el-table-column label="考试 / 报名人数">
+                <el-table-column prop="cla_id" sortable label="课程编号" width="200" align="center"></el-table-column>
+                <el-table-column prop="cla_name" label="课程标题"></el-table-column>
+                <el-table-column prop="test_date" label="考试日期" width="200" align="center"></el-table-column>
+                <el-table-column label="考试 / 报名人数" align="center">
                     <template slot-scope="scope">
                         {{scope.row.testNum}} / {{scope.row.signupNum}}
                     </template>
                 </el-table-column>
-                <el-table-column label="考试状态" align="center">
-                    <el-tag type="danger">已发布考试</el-tag>
-                </el-table-column>
-                <el-table-column label="改卷状态" align="center">
-                    <el-tag type="danger">已改卷</el-tag>
-                </el-table-column>
-                <el-table-column prop="ifpromulgate" sortable label="操作" width="180" align="center">
+                <el-table-column label="及格率(仅限已考)" align="center">
                     <template slot-scope="scope">
-                        <el-button
-                            type="text"
-                            icon="el-icon-medal"
-                            :disabled="scope.row.ifpromulgate===0?false:true"
-                            @click="handleEdit(scope.$index, scope.row)"
-                        >{{scope.row.ifpromulgate===0?'一键颁布证书':'已颁布'}}</el-button>
+                        {{scope.row.testNum}} / {{scope.row.signupNum}}
+                    </template>
+                </el-table-column>
+                <el-table-column label="证书等级" width="400" align="center">
+                    <template slot-scope="scope">
+                        优秀：{{scope.row.testNum}} 人；良好：{{scope.row.signupNum}} 人；及格：{{scope.row.testNum}} 人；
                     </template>
                 </el-table-column>
             </el-table>
