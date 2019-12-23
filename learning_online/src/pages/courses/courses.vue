@@ -25,6 +25,9 @@ export default {
   methods: {
     getParams () {
       var _this = this;
+      _this.$vux.loading.show({
+        text: "加载中.."
+      });
       // 取到路由带过来的参数
       var routerParams = _this.$route
       // 将数据放在当前组件的数据内

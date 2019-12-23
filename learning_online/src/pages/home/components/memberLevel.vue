@@ -52,9 +52,6 @@ export default {
           grade: "50"
         }
       });
-      this.$vux.loading.show({
-        text: "加载中.."
-      });
     },
     toSeniorMember() {
       this.$router.push({
@@ -64,9 +61,6 @@ export default {
           grade: "200"
         }
       });
-      this.$vux.loading.show({
-        text: "加载中.."
-      });
     },
     toSuperMember() {
       this.$router.push({
@@ -75,9 +69,6 @@ export default {
           memberLevel: "特级会员",
           grade: "1000"
         }
-      });
-      this.$vux.loading.show({
-        text: "加载中.."
       });
     }
   }
