@@ -29,6 +29,10 @@ var sqlMap = {
     addin: "insert into menprogress(mem_id,cla_id,progress) values (?,?,?)",
     // 会员删除学习课程信息
     delete: "delete from menprogress where (mem_id=?) and (cla_id=?)"
+  },
+  news: {
+    //获取新闻列表
+    get: "select * from news"
   }
 };
 
