@@ -112,7 +112,7 @@ export default {
         text: "加载中.."
       });
       var routerParams = _this.$route;
-      // console.log(routerParams.query.cla_id);
+      console.log(routerParams.query);
       _this.$axios
         .post("/api/class/searchClassById", {
           cla_id: routerParams.query.cla_id

@@ -1,6 +1,6 @@
 <template>
-  <router-link to="/courses/courseDetails">
-    <div class="container">
+  <!-- <router-link to="/courses/courseDetails"> -->
+    <div class="container"  @click="onClick">
       <img class="courseImg" src="" />
       <div class="classText">
         <span class="courseTitle">
@@ -11,12 +11,24 @@
         </div>
       </div>
     </div>
-  </router-link>
+  <!-- </router-link> -->
 </template>
 
 <script>
 export default {
-   props: ['data']
+   props: ['data'],
+   methods: {
+     onClick(){
+       console.log(this.data.cla_id)
+        this.$router.push({
+        path: "/courses/courseDetails",
+        query: {
+          cla_id: this.data.cla_id
+          // grade: this.data.cla_grade
+        }
+      });
+     }
+   },
 }
 </script>
 
