@@ -218,18 +218,6 @@ export default {
       //     console.log("会员等级课程列表");
       //     console.log(this.coursesList);
       //   });
-
-      // 查询课程
-      var _this = this;
-      _this.$axios
-        .post("/api/class/searchClass", {
-          cla_name: "123"
-        })
-        .then(response => {
-          this.coursesList = response.data;
-          console.log("根据课程名称查询课程信息");
-          console.log(this.coursesList);
-        });
     }
   }
 };
