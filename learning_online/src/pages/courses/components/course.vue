@@ -4,10 +4,10 @@
       <img class="courseImg" src="" />
       <div class="classText">
         <span class="courseTitle">
-          前端课程前端课程前端课程前端课程前端课程前端课程前端课程
+          {{ data.cla_name }}
         </span>
         <div class="courseInfo">
-          课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍
+          {{ data.cla_content }}
         </div>
       </div>
     </div>
@@ -15,7 +15,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+   props: ['data']
+}
 </script>
 
 <style scoped>

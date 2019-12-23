@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-    <x-header>普通会员</x-header>
-    <course></course>
-    <course></course>
+    <x-header>{{memberLevel}}</x-header>
+    <course v-for="item of coursesList" :key="item.cla_id" :data='item'></course>
   </div>
 </template>
 
@@ -14,16 +13,32 @@ export default {
     course,
     XHeader
   },
+  data() {
+    return {
+      memberLevel:'',
+      coursesList:[]
+    }
+  },
   created () {
     this.getParams()
   },
   methods: {
     getParams () {
+      var _this = this;
       // 取到路由带过来的参数
-      var routerParams = this.$route
+      var routerParams = _this.$route
       // 将数据放在当前组件的数据内
-      // this.memberLevel = routerParams
-      // console.log(routerParams)
+      _this.memberLevel=routerParams.query.memberLevel
+      //  会员等级课程列表
+      _this.$axios
+        .post("/api/class/vipClass", {
+          cla_grade: routerParams.query.grade
+        })
+        .then(response => {
+          this.coursesList = response.data;
+          // console.log(this.coursesList)
+          this.$vux.loading.hide()
+        });
     }
   },
   watch: {

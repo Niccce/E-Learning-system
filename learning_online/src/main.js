@@ -9,6 +9,9 @@ import VueResource from "vue-resource";
 import axios from "axios";
 import store from "./store";
 import { ToastPlugin } from "vux";
+import { LoadingPlugin } from "vux";
+
+Vue.use(LoadingPlugin);
 
 Vue.use(ToastPlugin);
 Vue.use(VueResource);

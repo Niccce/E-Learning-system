@@ -12,7 +12,7 @@ var sqlMap = {
     // 职员删除课程信息
     deletein: "delete from class where (cla_id=?)",
     // 会员等级课程
-    vip: "select * from class where (cla_grade > ?)"
+    vip: "select * from class where (cla_grade < ?)"
   },
   // 用户
   member: {

@@ -207,17 +207,6 @@ export default {
       //     console.log(this.coursesList);
       //   });
 
-      //会员等级课程列表
-      // var _this = this;
-      // _this.$axios
-      //   .post("/api/class/vipClass", {
-      //     cla_grade: "1"
-      //   })
-      //   .then(response => {
-      //     this.coursesList = response.data;
-      //     console.log("会员等级课程列表");
-      //     console.log(this.coursesList);
-      //   });
     }
   }
 };

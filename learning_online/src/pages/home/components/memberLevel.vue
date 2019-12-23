@@ -19,15 +19,15 @@
   </flexbox> -->
   <div class="container">
     <grid :show-lr-borders="false" :show-vertical-dividers="false">
-      <grid-item link="/courses">
+      <grid-item @on-item-click="toMember">
         <img slot="icon" src="../../../assets/member.png" />
         <span slot="label">普通会员</span>
       </grid-item>
-      <grid-item link="/courses">
+      <grid-item @on-item-click="toSeniorMember">
         <img slot="icon" src="../../../assets/seniorMember.png" />
         <span slot="label">高级会员</span>
       </grid-item>
-      <grid-item link="/courses" @on-item-click="goToCDetails">
+      <grid-item @on-item-click="toSuperMember">
         <img slot="icon" src="../../../assets/superMember.png" />
         <span slot="label">特级会员</span>
       </grid-item>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { Grid, GridItem } from 'vux'
+import { Grid, GridItem } from "vux";
 
 export default {
   components: {
@@ -44,18 +44,44 @@ export default {
     GridItem
   },
   methods: {
-    goToCDetails () {
+    toMember() {
       this.$router.push({
-        path: '/courses',
+        path: "/courses",
         query: {
-          memberLevel: '123'
+          memberLevel: "普通会员",
+          grade: "50"
         }
-      })
-      console.log('发送')
-      console.log(this.$router)
+      });
+      this.$vux.loading.show({
+        text: "加载中.."
+      });
+    },
+    toSeniorMember() {
+      this.$router.push({
+        path: "/courses",
+        query: {
+          memberLevel: "高级会员",
+          grade: "200"
+        }
+      });
+      this.$vux.loading.show({
+        text: "加载中.."
+      });
+    },
+    toSuperMember() {
+      this.$router.push({
+        path: "/courses",
+        query: {
+          memberLevel: "特级会员",
+          grade: "1000"
+        }
+      });
+      this.$vux.loading.show({
+        text: "加载中.."
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
