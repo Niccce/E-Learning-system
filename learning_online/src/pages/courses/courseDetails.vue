@@ -9,10 +9,10 @@
       <tab-item v-if="isJoin === true">进度</tab-item>
     </tab>
     <div id="intro" v-if="index === 0">
-      <span>{{courseInfo.cla_name}}</span>
-      <p>课程老师：{{courseInfo.cla_teacher}}</p>
-      <p>课程类型：{{courseInfo.cla_type}}</p>
-      <p>课程简介：{{courseInfo.cla_content}}</p>
+      <span>{{ courseInfo.cla_name }}</span>
+      <p>课程老师：{{ courseInfo.cla_teacher }}</p>
+      <p>课程类型：{{ courseInfo.cla_type }}</p>
+      <p>课程简介：{{ courseInfo.cla_content }}</p>
     </div>
     <!-- <div id="catalogue" v-if="index === 1">2</div> -->
     <div id="comments" v-if="index === 1 && isJoin === false">
@@ -79,7 +79,7 @@ export default {
       isJoin: false, //是否加入了本课程
       btnTitle: "可对该课程进行评价",
       myComment: "",
-      courseInfo:[]
+      courseInfo: []
     };
   },
   methods: {
@@ -87,8 +87,33 @@ export default {
       this.index = index;
     },
     btnJoin() {
-      this.isJoin = true;
-      console.log("join the course");
+      var _this = this;
+      // console.log(this.courseInfo)
+      if (_this.$store.state.grade < _this.courseInfo.cla_grade) {
+        _this.$vux.toast.show({
+          text: "等级不足，无法加入课程哦",
+          type: "cancel"
+        });
+      } else {
+        this.isJoin = true;//改变组件显示
+        _this.$vux.loading.show({
+          text: "加入中.."
+        });
+        // console.log(_this.courseInfo.cla_id)
+        _this.$axios
+          .get("/api/menprogress/addinClass", {
+            params: {
+              mem_id: _this.$store.state.userId, //"M00014",//_this.$store.state.userId
+              cla_id: _this.courseInfo.cla_id //"C0102"//_this.courseInfo.cla_id
+            }
+          })
+          .then(response => {
+            console.log("加入课程成功");
+            // this.courseInfo = response.data;
+            // console.log(this.courseInfo);
+            this.$vux.loading.hide();
+          });
+      }
     },
     btnToLearn() {
       this.$router.push({
@@ -112,21 +137,21 @@ export default {
         text: "加载中.."
       });
       var routerParams = _this.$route;
-      console.log(routerParams.query);
+      // console.log(routerParams.query);
       _this.$axios
         .post("/api/class/searchClassById", {
           cla_id: routerParams.query.cla_id
         })
         .then(response => {
           this.courseInfo = response.data[0];
-          console.log(this.courseInfo)
+          console.log(this.courseInfo);
           this.$vux.loading.hide();
         });
     }
   },
   created() {
-    this.getCourseInfo()
-  },
+    this.getCourseInfo();
+  }
 };
 </script>
 

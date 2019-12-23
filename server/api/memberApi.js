@@ -41,7 +41,8 @@ router.post('/login', (req, res) => {
           data: 1,
           userId: resultArray.mem_id,
           username: resultArray.mem_name,
-          points: resultArray.mem_value
+          points: resultArray.mem_value,
+          grade: resultArray.mem_grade
         })
         // res.send('1')
       } else {

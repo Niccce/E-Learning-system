@@ -111,8 +111,8 @@ axios.interceptors.request.use(
     // 在发送请求之前做些什么
     //判断是否存在token，如果存在将每个页面header都添加token
     if (store.state.token) {
-      // config.headers.Authorization = localStorage.getItem("token");
-      config.headers.Authorization = store.state.token;
+      config.headers.Authorization = localStorage.getItem("token");
+      // config.headers.Authorization = store.state.token;
       // console.log("Authorization:" + localStorage.getItem("token"));
     }
     return config;

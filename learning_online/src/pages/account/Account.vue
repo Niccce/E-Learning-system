@@ -55,16 +55,18 @@ export default {
   },
   computed: {
     level: function() {
-      let level = 1;
-      if (this.$store.state.points >= 50 && this.$store.state.points < 200) {
-        level = 2;
-        return level;
-      } else if (this.$store.state.points >= 200) {
-        level = 3;
-        return level;
-      } else {
-        return level;
-      }
+      let level=this.$store.state.grade;
+      return level;
+      // let level = 1;
+      // if (this.$store.state.points >= 50 && this.$store.state.points < 200) {
+      //   level = 2;
+      //   return level;
+      // } else if (this.$store.state.points >= 200) {
+      //   level = 3;
+      //   return level;
+      // } else {
+      //   return level;
+      // }
     }
   }
   //   watch: {

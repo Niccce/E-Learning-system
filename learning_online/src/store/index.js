@@ -12,7 +12,8 @@ const state = {
   // token: "",
   userId: "",
   username: "",
-  points:'',//积分
+  points: '',//积分,
+  grade:1,
   // isLogin: 0,
   recommendedCourses: []
 };
@@ -25,12 +26,15 @@ const mutations = {
     // console.log("保存推荐课程列表");
   },
   setTokenAndUser(state, res) {
-    console.log(res)
+    console.log('用户信息');
+    console.log(res);
     state.token = res.token;
     state.userId = res.userId;
     state.username = res.username;
     state.points = res.points;
+    state.grade = res.grade;
     localStorage.setItem("token", res.token); //把token保存到本地
+    // console.log(state.grade);
   },
   // changeIsLogin(state, res) {
   //   state.isLogin = res;
