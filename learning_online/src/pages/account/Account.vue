@@ -34,20 +34,45 @@
         </grid-item>
       </grid>
     </div>
+    <div class="btn">
+      <x-button type="primary" mini @click.native="logout">
+        退出登录
+      </x-button>
+    </div>
   </div>
 </template>
 
 <script>
-import { XHeader, Grid, GridItem } from "vux";
+import { XHeader, Grid, GridItem, XButton } from "vux";
+import { mapState, mapActions } from "vuex";
 export default {
   components: {
     XHeader,
     Grid,
-    GridItem
+    GridItem,
+    XButton
   },
   methods: {
+    ...mapActions([
+      "getToken" // 触发actions里的 getInfo 函数，调动接口
+    ]),
     onItemClick() {
       console.log("on item click");
+    },
+    logout() {
+      //移除store里的东西，token，跳转登录页面
+      var data = {
+        token: "",
+        userId: "",
+        username: "",
+        points: "",
+        grade: 1
+      };
+      localStorage.removeItem("token");
+      this.getToken(data);
+      this.$router.push({
+        path: "/login"
+      });
     }
   },
   created() {
@@ -55,7 +80,7 @@ export default {
   },
   computed: {
     level: function() {
-      let level=this.$store.state.grade;
+      let level = this.$store.state.grade;
       return level;
       // let level = 1;
       // if (this.$store.state.points >= 50 && this.$store.state.points < 200) {
@@ -104,5 +129,9 @@ export default {
   flex-direction: column;
   line-height: 1.5em;
   margin-left: 1em;
+}
+.btn {
+  text-align: right;
+  margin-top: 2em;
 }
 </style>

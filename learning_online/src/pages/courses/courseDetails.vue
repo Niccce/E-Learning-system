@@ -18,7 +18,7 @@
     <div id="comments" v-if="index === 1 && isJoin === false">
       <comment
         v-for="item in commentList"
-        :key="item.cMes_date"
+        :key="item.cMes_id"
         :data="item"
       ></comment>
       <x-button class="btn" mini type="warn" @click.native="btnJoin">
