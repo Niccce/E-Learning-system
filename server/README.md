@@ -43,6 +43,8 @@ api/userApi.js ---- 测试用api示例
     - [x] 加入课程
 - [ ] 课程学习页
     - [ ] 留言
+    - [ ] 开始学习
+    - [ ] 进入考试
 
 ## 登录注册
 1. 安装jsonwebtoken进行token验证
