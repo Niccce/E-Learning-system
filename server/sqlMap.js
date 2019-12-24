@@ -28,9 +28,12 @@ var sqlMap = {
     // 会员添加学习课程
     addin: "insert into menprogress(mem_id,cla_id,progress) values (?,?,?)",
     // 会员删除学习课程信息
-    delete: "delete from menprogress where (mem_id=?) and (cla_id=?)",
+    // delete: "delete from menprogress where (mem_id=?) and (cla_id=?)",
+    // 获取会员学习进度
     getProgress:
-      "select progress from menprogress where (mem_id=?) and (cla_id=?)"
+      "select progress from menprogress where (mem_id=?) and (cla_id=?)",
+    // 修改会员学习进度
+    modify: "update menprogress set progress=? where (mem_id=?) and (cla_id=?)"
   },
   news: {
     //获取新闻列表

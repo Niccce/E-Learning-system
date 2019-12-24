@@ -13,22 +13,14 @@ router.get("/addinClass", (req, res) => {
   var sql = $sql.menprogress.addin;
   var params = req.query;
   var progress = "0";
-  conn.query(
-    sql,
-    [
-      params.mem_id,
-      params.cla_id,
-      progress
-    ],
-    (err, result) => {
-      if (err) {
-        console.log(err);
-      }
-      if (result) {
-        res.send("1");
-      }
+  conn.query(sql, [params.mem_id, params.cla_id, progress], (err, result) => {
+    if (err) {
+      console.log(err);
     }
-  );
+    if (result) {
+      res.send("1");
+    }
+  });
   // conn.end();
 });
 
@@ -52,8 +44,8 @@ router.get("/addinClass", (req, res) => {
 router.get("/getProgress", (req, res) => {
   var sql = $sql.menprogress.getProgress;
   var params = req.query;
-  console.log('参数');
-  console.log(params);
+  // console.log("参数");
+  // console.log(params);
   conn.query(sql, [params.mem_id, params.cla_id], (err, result) => {
     if (err) {
       console.log(err);
@@ -64,6 +56,24 @@ router.get("/getProgress", (req, res) => {
   });
 });
 
-
+// 修改会员学习进度
+router.post("/modifyProgress", (req, res) => {
+  var sql = $sql.menprogress.modify;
+  var params = req.body;
+  // console.log("sql" + sql);
+  console.log(params);
+  conn.query(
+    sql,
+    [params.progress, params.mem_id, params.cla_id],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      }
+      if (result) {
+        res.send("学习进度修改成功");
+      }
+    }
+  );
+});
 
 module.exports = router;

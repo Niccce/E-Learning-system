@@ -125,7 +125,7 @@ export default {
     btnToLearn() {
       this.$router.push({
         name: "learn", //用path获取不到params参数，query用path和name都可以
-        params: { content: this.courseInfo.cla_ppt }
+        params: { content: this.courseInfo.cla_ppt,cla_id:this.courseInfo.cla_id }
       });
     },
     btnToExam() {

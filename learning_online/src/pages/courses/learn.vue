@@ -15,7 +15,7 @@
 import { XHeader } from "vux";
 export default {
   components: {
-    XHeader,
+    XHeader
     // Countdown,
     // Group,
     // Cell
@@ -23,29 +23,42 @@ export default {
   data() {
     return {
       content: "",
+      cla_id:'',
       // title:'学习倒计时',
       // show: true,
       // time: 15,
       // value: ""
-      canDoExam:false,
-      timer:null
+      // canDoExam: false,
+      timer: null
     };
   },
   created() {
     this.getParams();
-     this.timer = setTimeout(() => {
-      this.canDoExam = true;
-      console.log(this.canDoExam)
-      //改掉progess
-    }, 5000)
+    this.timer = setTimeout(() => {
+      // this.canDoExam = true;
+      // console.log(this.canDoExam);
+      // var _this = this;
+      //修改进度为100
+      this.$axios
+        .post("/api/menprogress/modifyProgress", {
+          mem_id: this.$store.state.userId,
+          progress:'100',
+          mem_id: this.$store.state.userId,
+          cla_id: this.cla_id
+        })
+        .then(response => {
+          this.$vux.toast.text("已完成学习进度，可参与考试");
+          console.log(response.data);
+        });
+
+    }, 5000);
   },
   methods: {
     getParams() {
-      //接收函数
       // console.log(this.$route);
       this.content = this.$route.params.content;
-      // 学习完才能考试，修改进度为100
-    },
+      this.cla_id=this.$route.params.cla_id
+    }
     // finish(index) {
     //   this.show = false;
     //   this.value = "completed";
@@ -56,8 +69,8 @@ export default {
 </script>
 
 <style scoped>
-.groupFixed{
-  /* position: absolute;
+/* .groupFixed{ */
+/* position: absolute;
   bottom: 0em; */
-}
+/* } */
 </style>
