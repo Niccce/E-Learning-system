@@ -16,13 +16,11 @@
     </div>
     <!-- <div id="catalogue" v-if="index === 1">2</div> -->
     <div id="comments" v-if="index === 1 && isJoin === false">
-      <comment></comment>
-      <comment></comment>
-      <comment></comment>
-      <comment></comment>
-      <comment></comment>
-      <comment></comment>
-      <comment></comment>
+      <comment
+        v-for="item in commentList"
+        :key="item.cMes_date"
+        :data="item"
+      ></comment>
       <x-button class="btn" mini type="warn" @click.native="btnJoin">
         加入课程
       </x-button>
@@ -86,7 +84,8 @@ export default {
       courseInfo: [],
       progress: "0",
       cannotClick: true, //进度为100可点击考试按钮，false时可点击
-      content: ""
+      content: "",
+      commentList: []
     };
   },
   methods: {
@@ -125,7 +124,10 @@ export default {
     btnToLearn() {
       this.$router.push({
         name: "learn", //用path获取不到params参数，query用path和name都可以
-        params: { content: this.courseInfo.cla_ppt,cla_id:this.courseInfo.cla_id }
+        params: {
+          content: this.courseInfo.cla_ppt,
+          cla_id: this.courseInfo.cla_id
+        }
       });
     },
     btnToExam() {
@@ -135,8 +137,24 @@ export default {
       });
     },
     submitComment() {
-      console.log(this.myComment);
+      var _this = this;
+      console.log(_this.myComment);
       console.log("submit");
+      var myDate = new Date();
+      var date = myDate.toLocaleDateString();
+      _this.$axios
+        .get("/api/cMessage/addComment", {
+          params: {
+            cla_id: _this.courseInfo.cla_id,
+            cMes_date: date,
+            cMes_userId: _this.$store.state.username,
+            cMes_content: _this.myComment,
+            cMes_userType: _this.$store.state.grade
+          }
+        })
+        .then(response => {
+          this.$vux.toast.text("评论成功");
+        });
     },
     getCourseInfo() {
       //获取课程信息
@@ -154,6 +172,20 @@ export default {
           this.courseInfo = response.data[0];
           console.log(this.courseInfo);
         });
+
+      // 获取课程评论
+      _this.$axios
+        .get("/api/cMessage/getComment", {
+          params: {
+            cla_id: routerParams.query.cla_id
+          }
+        })
+        .then(response => {
+          this.commentList = response.data;
+          // console.log(response.data[0].progress);
+          console.log(this.commentList);
+        });
+
       // 获取会员学习进度
       // var _this = this;
       _this.$axios

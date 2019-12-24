@@ -3,20 +3,22 @@
     <div class="user-info">
       <img src="http://q1tum4ulx.bkt.clouddn.com/u=2280731892,2555333731&fm=26&gp=0.jpg" />
       <div class="info">
-        <span>Niccce</span>
-        <span>2019-12-13</span>
+        <span>{{data.cMes_userId}}</span>
+        <span>{{data.cMes_date}}</span>
       </div>
     </div>
     <div>
       <div class="comment">
-        评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论评论
+        {{data.cMes_content}}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props:['data']
+}
 </script>
 
 <style scoped>
