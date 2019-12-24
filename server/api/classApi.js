@@ -56,7 +56,7 @@ router.post("/searchClass", (req, res) => {
 router.post("/searchClassById", (req, res) => {
   var sql = $sql.class.searchById;
   var params = req.body;
-  console.log(params.cla_id);
+  // console.log(params.cla_id);
   conn.query(sql, [params.cla_id], (err, result) => {
     if (err) {
       console.log(err);
@@ -100,7 +100,7 @@ router.post("/addclass", (req, res) => {
       }
     }
   );
-  conn.end();
+  // conn.end();
 });
 
 //职员删除课程信息

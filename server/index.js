@@ -8,6 +8,7 @@ const classApi = require('./api/classApi')
 const memberApi = require("./api/memberApi");
 const menprogressApi = require("./api/menprogress");
 const newsApi = require("./api/newsApi");
+const testApi = require("./api/testApi");
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
@@ -24,6 +25,7 @@ app.use('/api/class', classApi)
 app.use("/api/member", memberApi);
 app.use("/api/menprogress", menprogressApi);
 app.use("/api/news", newsApi);
+app.use("/api/test", testApi);
 
 
 // 监听端口

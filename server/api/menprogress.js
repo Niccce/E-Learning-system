@@ -29,23 +29,41 @@ router.get("/addinClass", (req, res) => {
       }
     }
   );
-  conn.end();
+  // conn.end();
 });
 
 //会员删除课程
-router.post("/deleteclass", (req, res) => {
-  var sql = $sql.menprogress.delete;
-  var params = req.body;
-  console.log("sql" + sql);
+// router.post("/deleteclass", (req, res) => {
+//   var sql = $sql.menprogress.delete;
+//   var params = req.body;
+//   console.log("sql" + sql);
+//   console.log(params);
+//   conn.query(sql, [params.mem_id, params.cla_id], (err, result) => {
+//     if (err) {
+//       console.log(err);
+//     }
+//     if (result) {
+//       res.send("1");
+//     }
+//   });
+// });
+
+// 取得会员学习进度
+router.get("/getProgress", (req, res) => {
+  var sql = $sql.menprogress.getProgress;
+  var params = req.query;
+  console.log('参数');
   console.log(params);
   conn.query(sql, [params.mem_id, params.cla_id], (err, result) => {
     if (err) {
       console.log(err);
     }
     if (result) {
-      res.send("1");
+      res.send(result);
     }
   });
 });
+
+
 
 module.exports = router;

@@ -32,13 +32,17 @@
         <x-button class="learnBtn" type="primary" @click.native="btnToLearn">
           第一章：开始学习
         </x-button>
-        <x-button class="learnBtn" type="primary" @click.native="btnToLearn">
+        <!-- <x-button class="learnBtn" type="primary" @click.native="btnToLearn">
           第二章：开始学习
         </x-button>
         <x-button class="learnBtn" type="primary" @click.native="btnToLearn">
           第三章：开始学习
-        </x-button>
-        <x-button type="primary" @click.native="btnToExam">
+        </x-button> -->
+        <x-button
+          type="primary"
+          :disabled="cannotClick"
+          @click.native="btnToExam"
+        >
           进入考试
         </x-button>
       </div>
@@ -79,7 +83,10 @@ export default {
       isJoin: false, //是否加入了本课程
       btnTitle: "可对该课程进行评价",
       myComment: "",
-      courseInfo: []
+      courseInfo: [],
+      progress: "0",
+      cannotClick: true, //进度为100可点击考试按钮，false时可点击
+      content: ""
     };
   },
   methods: {
@@ -95,7 +102,7 @@ export default {
           type: "cancel"
         });
       } else {
-        this.isJoin = true;//改变组件显示
+        this.isJoin = true; //改变组件显示
         _this.$vux.loading.show({
           text: "加入中.."
         });
@@ -118,7 +125,7 @@ export default {
     btnToLearn() {
       this.$router.push({
         name: "learn", //用path获取不到params参数，query用path和name都可以
-        params: { aa: 123, bb: 456 }
+        params: { content: this.courseInfo.cla_ppt }
       });
     },
     btnToExam() {
@@ -132,12 +139,13 @@ export default {
       console.log("submit");
     },
     getCourseInfo() {
+      //获取课程信息
       var _this = this;
       _this.$vux.loading.show({
         text: "加载中.."
       });
       var routerParams = _this.$route;
-      // console.log(routerParams.query);
+      console.log(routerParams.query);
       _this.$axios
         .post("/api/class/searchClassById", {
           cla_id: routerParams.query.cla_id
@@ -145,12 +153,32 @@ export default {
         .then(response => {
           this.courseInfo = response.data[0];
           console.log(this.courseInfo);
+        });
+      // 获取会员学习进度
+      // var _this = this;
+      _this.$axios
+        .get("/api/menprogress/getProgress", {
+          params: {
+            mem_id: this.$store.state.userId,
+            cla_id: routerParams.query.cla_id
+          }
+        })
+        .then(response => {
+          // console.log(response.data[0].progress);
+          // console.log(this.progress);
+          if (response.data.length !== 0) {
+            this.progress = response.data[0].progress;
+            this.isJoin = true;
+            if (this.progress === "100") {
+              this.cannotClick = false;
+            }
+          }
           this.$vux.loading.hide();
         });
     }
   },
   created() {
-    this.getCourseInfo();
+    this.getCourseInfo(); //获取课程信息
   }
 };
 </script>

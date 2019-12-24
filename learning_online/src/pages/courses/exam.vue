@@ -141,23 +141,21 @@ export default {
 
     submitAnswer() {
       let goal = 0;
-      // if (this.choiceOne.value === this.questionOne.answer) {
-      //   goal += 20
-      // }
+      if (this.choiceOne.value === this.questionOne.answer) {
+        goal += 20;
+      }
       console.log(goal);
+      // 修改成绩信息表，存入会员id，课程id，成绩，证书置为及格良好优秀？？
+      // 完成课程，加积分？？
 
-      //会员添加课程
+
+      //获取考试列表???
       // var _this = this;
-      // _this.$axios
-      //   .get("/api/menprogress/addinClass", {
-      //     params: {
-      //       mem_id: "M00004",
-      //       cla_id: "C00002"
-      //     }
-      //   })
-      //   .then(response => {
-      //     console.log("success");
-      //   });
+      // _this.$axios.get("/api/test/gettest", {}).then(response => {
+      //   this.coursesList = response.data;
+      //   console.log("reC.vue获取推荐课程");
+      //   console.log(this.coursesList);
+      // });
 
       //会员删除课程
       // var _this = this;
