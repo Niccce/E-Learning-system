@@ -10,6 +10,7 @@ const menprogressApi = require("./api/menprogress");
 const newsApi = require("./api/newsApi");
 const testApi = require("./api/testApi");
 const cMessageApi = require("./api/cMessageApi");
+const resultApi = require("./api/resultApi");
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
@@ -28,6 +29,7 @@ app.use("/api/menprogress", menprogressApi);
 app.use("/api/news", newsApi);
 app.use("/api/test", testApi);
 app.use("/api/cMessage", cMessageApi);
+app.use("/api/result", resultApi);
 
 
 // 监听端口

@@ -24,5 +24,19 @@ conn.connect();
 //   })
 // });
 
+//获取试题
+router.post("/getQuestion", (req, res) => {
+  var sql = $sql.test.join;
+    var params = req.body;
+    console.log(params);
+  conn.query(sql, [params.cla_id], (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    if (result) {
+      res.send(result);
+    }
+  });
+});
 
 module.exports = router;

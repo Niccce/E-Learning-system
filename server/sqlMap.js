@@ -43,11 +43,17 @@ var sqlMap = {
     //获取考试信息
     // get:
     //   "select class.cla_id,class.cla_content,class.cla_teacher,test.tes_date,test.test_number,class.cla_sum,class.cla_iftest from test left join class on (test.cla_id = class.cla_id) union select class.cla_id,class.cla_content,class.cla_teacher,test.tes_date,test.test_number,class.cla_sum,class.cla_iftest from test right join class on (test.cla_id = class.cla_id)"
+    // 获取试题
+    join: "select test_question from test where (cla_id=?)"
   },
   cMessage: {
     getComment: "select * from cMessage where (cla_id=?)",
     add:
       "insert into cMessage(cla_id,cMes_date,cMes_userId,cMes_content,cMes_id,cMes_userType) values (?,?,?,?,?,?)"
+  },
+  result: {
+    add:
+      "insert into result (mem_id,cla_id,result,certificate) values (?,?,?,?)"
   }
 };
 

@@ -133,7 +133,7 @@ export default {
     btnToExam() {
       this.$router.push({
         name: "exam", //用path获取不到params参数，query用path和name都可以
-        params: { aa: 123, bb: 456 }
+        params: { cla_id: this.courseInfo.cla_id }
       });
     },
     submitComment() {
